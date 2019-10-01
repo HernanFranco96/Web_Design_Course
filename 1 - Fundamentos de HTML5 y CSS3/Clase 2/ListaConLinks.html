@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista con Links</title>
+	<style type="text/css">
+		header{
+			background: #000;
+		}
+		nav ul{	
+			display: flex;
+			justify-content: space-between; /*Crea cantidad de espacios iguales entre los elementos*/
+		}	
+		nav li{
+			flex: auto; /*Todos los elementos tienen el mismo ancho*/
+			margin: 3px;
+			border: #000 1px solid;
+			background: gray;
+			list-style-type: none;
+			text-align: center;
+		}
+		nav ul li a{
+			text-decoration: none;
+			font-size: 25px;
+		}
+
+		ul li:hover{
+			background: white;
+		}
+		ul li a:hover{
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Perfil</a></li>
+				<li><a href="#">Noticias</a></li>
+				<li><a href="#">Foro</a></li>
+			</ul>
+		</nav>
+	</header>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Estilos en Links</title>
+	<style type="text/css">
+		/* Importamos una fuente de google */
+		@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Rubik&display=swap');
+
+		.estiloA{
+			color: #0D439B;
+			background: #A8B8AD;
+			border: #283140 2px solid;
+			padding: 4px;
+			margin: 2px;
+			text-decoration: none;
+			font-family: 'Indie Flower', cursive; /* Agregamos una fuente */
+		}
+
+		/* Cuando el link es visitado sucede lo siguiente. */
+		.estiloA:visited{
+			background: #05BBDF;
+		}
+
+		/* Cuando el mouse pasa por arriba sucede lo siguiente. */
+		.estiloA:hover{
+			background: #fff;
+		}
+
+		/* Cuando se hace click en el link sucede esto. */
+		.estiloA:active{
+			background: #000;
+			font-family: 'Rubik', sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="#" class="estiloA">HOME</a>
+			<a href="#" class="estiloA">ABOUT US</a>
+			<a href="#" class="estiloA">CONTACT</a>
+			<a href="#" class="estiloA">WORK US</a>
+		</nav>
+	</header>
+</body>
+</html>

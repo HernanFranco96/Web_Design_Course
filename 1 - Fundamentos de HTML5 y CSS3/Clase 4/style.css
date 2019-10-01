@@ -1,0 +1,28 @@
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	iframe{
+		width: 70%;
+		margin: auto;
+		height: 2000px;
+	}
+	header nav a{
+		padding: 30px;
+		background-color: rgba(181, 82, 54, .7);
+		text-decoration-line: none;
+		color: #fff;
+		font-size: 300px;
+		margin-top: 30%;
+	}
+	a:hover{
+		background-color: rgba(168, 146, 139, .7); 
+		border: 3px black solid;
+		border-radius: 10px;
+	}
+	.izq{
+		float: left;
+	}
+	.der{
+		float: right;
+	}

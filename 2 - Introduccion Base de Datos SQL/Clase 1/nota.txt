@@ -1,0 +1,28 @@
+Horacio Oneto
+
+Onetech3429@gmail.com
+
+Scrum -> Es una metodologia de programaciòn en bloques. Leer
+
+Un motor de base de datos es el que me permite manejar la base de datos.
+Una base de datos es un conjunto de datos del mismo tipo.
+
+Un repositorio de base de datos es un contenedor. Es un lugar donde se guardan los datos.
+
+Usuarios -> Aplicacion -> Motor de base de Datos -> Definicion / Datos.
+
+Primary Key -> El dato primario, es el dato principal con el cual buscar la BD.
+
+Insertar, modificar, buscar, eliminar.
+
+
+Campo Laboral -> Linux, Programaciòn, BD, Seguridad Informatica, Tester.
+
+Xampp -> Crea la BD. Es un empaquetador, es un comprimido que nos trae las herramientas para programar en MySQL, PHP, Python, Un servidor llamado Apache, Mercury y Tomcat.
+
+MySQL -> Motor de base de datos.
+
+Apache -> Convierte nuestra PC en un servidor virtual.
+
+WorkBench -> Facilita la programacion.
+

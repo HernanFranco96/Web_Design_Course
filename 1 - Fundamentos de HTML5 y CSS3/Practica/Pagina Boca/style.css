@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(1.jpg);
+    background-size: cover; /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    background-repeat: no-repeat; /* Para que la imagen de fondo no se repita */
+    background-position: center center; /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+    background-color: #669999; /* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
+    background-attachment: fixed; /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    text-align: center;
+}
+
+.navegacion{
+    background-color: rgba( 11, 39, 135, .5);
+    width: 1000px;
+    margin: 30px auto;
+    color: #fff;
+}
+
+.navegacion ul{
+        list-style: none;
+}
+
+.menu > li{
+    position: relative;
+    display: inline-block; /*Colocamos la lista una alado de la otra*/
+}
+
+.menu li > a{
+    color: #fff;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu li a:hover{
+    background-color: rgba( 11, 20, 77, .5);
+    transition: all .3s; /*Le damos un efecto de transicion para que tarde en aparecer el color de fondo.*/
+}
+
+/*      SUBMENU         */
+
+.submenu{
+    position: absolute; /*Posiciona el submenu abajo de la lista madre.*/
+    background-color: rgba( 10, 22, 66, .9);
+    width: 120%;
+    visibility: hidden; /*Desaparece el elemento*/
+    opacity: 0; /*La opacitypropiedad especifica la opacidad / transparencia de un elemento.*/
+    transition: opacity 1.5s;
+}
+
+.submenu li a{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.menu li:hover .submenu{
+    visibility: visible; /*Vuelve visible al elemento*/
+    opacity: 1;
+    background-color: rgba( 30, 51, 127, .7);
+}
+
+main{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+main > div{
+    background-color: rgba( 11, 39, 135, .7);
+    display: inline-block;
+    width: 500px;
+    height: 300px;
+    margin: 15px auto;
+    padding: 10px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer{
+    background-color: rgba( 11, 39, 135, .5);
+    width: 1000px;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+}
+
+footer > p{
+    color: #fff;
+    font-size: 20px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Mi Pagina</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		header nav{
+			text-align: center;
+			background: #3CF698;
+			padding: 20px;
+			width: 80%;
+			margin: 10px auto;
+			border: 3px #000 solid;
+			border-radius: 4px; 
+		}
+		header nav a{
+			text-decoration: none;
+			background: #000;
+			color: #fff;
+			padding: 10px;
+		}
+		header nav a:hover{
+			background: grey;
+			border: 1px #000 solid;
+			border-radius: 2px;
+		}
+		img{
+			width: 700px;
+		}
+		.contenedor{
+			width: 700px;
+			margin: 30px auto; /*Arriba y abajo 30px y despues auto para que se centre*/
+			overflow: hidden; /*Nos ayuda a ocultar a todo lo que salgan de estos 700px*/
+		}
+		.contenedor ul{
+			list-style-type: none;
+			width: 2800px;
+			display: flex;
+
+			animation: slide 20s infinite;
+		}
+
+		@keyframes slide{
+			0% {margin-left: 0px;}
+			20%{margin-left: 0px;}
+
+			25%{margin-left: -700px;}
+			45%{margin-left: -700px;}
+
+			50%{margin-left: -1400px;}
+			70%{margin-left: -1400px;}
+
+			75%{margin-left: -2100px;}
+			100%{margin-left: 2100px;}
+		}
+		footer{
+			background: #8570DA;
+			text-align: center;
+			width: 1000px;
+			margin: 3px auto;
+		}
+		footer p{
+			font-size: 20px;
+			padding: 10px;
+			border: 3px #000 solid;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="#">INICIO</a>
+			<a href="#">PERFIL</a>
+			<a href="#">NOTICIAS</a>
+			<a href="#">CUENTA</a>
+			<a href="#">CERRAR SESION</a>
+		</nav>
+	</header>
+	<main>
+		<div class="contenedor">
+			<ul>
+				<li> <img src="img/1.jpg"> </li>
+				<li> <img src="img/2.jpg"> </li>
+				<li> <img src="img/3.jpg"> </li>
+				<li> <img src="img/4.jpg"> </li>
+			</ul>
+		</div>
+	</main>
+	<footer>
+		<p>Hecho por Hernán Franco</p>
+	</footer>
+</body>
+</html>

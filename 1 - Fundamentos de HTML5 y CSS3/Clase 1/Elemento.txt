@@ -1,0 +1,32 @@
+Plataforma Alumni -> Ingresamos con el email y contraseña es el DNI.
+
+HTML: 
+No es un lenguaje de programacion, es un lenguaje de marca.
+No tiene logica.
+Tiene sintaxis.
+Los atributos (adjetivo) dicen como se va a ver un elemento(Sustantivo).
+
+Sublime Text: 
+Proporciona muchas herramientas.
+
+Como es un elemento ?
+
+<nombreElemento atributo1 = "valor1" atributo2 = "valor2"> Este es el tag de inicio
+
+	Contenido : 
+		- Otros elementos
+		- Texto, musica, imagenes, etc.
+
+</nombreElemento> Este es el tag de cierre
+
+-	Todos los elementos tiene tag de inicio, no todos los elementos tiene tag de cierre.
+
+Profesor Matias
+
+rapaport.matias@gmail.com
+
+Asunto: [EIT] - curso / dia / turno
+
+DESCARGAR COLOR COP. Este programa sirve para levantar colores de un cliente por ejemplo. Para saber que hexadesimal es el color.
+
+COLOR ZILLA es una extencion de chrome. Tiene la misma funcion que COLOR COP solo que se puede usar dentro de google chrome.

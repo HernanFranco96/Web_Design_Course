@@ -1,0 +1,11 @@
+FORMATO DE CSS
+
+.nombre{
+	propiedad1: valor1;
+	propiedad2: valor2;
+	propiedad3: valor3;
+}
+
+se puede repetir cuantas veces quieran.
+
+El nombre va todo junto con el punto, sin espacios y no puede arrancar con numeros.

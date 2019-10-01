@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularios Estilos</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+		form fieldset{
+			text-align: center;
+			margin: auto;
+			border: 2px orange double;
+			border-radius: 5px;
+		}
+		fieldset{
+			width: 200px;
+			font-family: 'Roboto', sans-serif;
+		}
+		input{
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Ingreso</legend>
+
+			<input type="text" name="nombreUsuario" placeholder="Nombre" id="nombreUsuario" required="required" maxlength="10" minlength="3">
+
+			<br>
+			<br>
+
+			<input type="text" name="apellidoUsuario" placeholder="Apellido" id="apellidoUsuario" required="required">
+
+			<br>
+			<br>
+
+			<input type="password" placeholder="Password" name="password" id="password" required="required">
+		</fieldset>
+		
+	</form>
+</body>
+</html>

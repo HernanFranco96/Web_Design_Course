@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+		h1{
+			font-family: 'Roboto', sans-serif;
+			text-align: center;
+		}
+		form{
+			width: 720px;
+			margin: auto;
+		}
+		select{
+			width: 700px;
+			padding: 8px;
+			border-radius: 5px;
+			margin: 2px 0 10px 1px;
+		}
+		input{
+			width: 700px;
+			padding: 8px;
+			border: 1px #E4E2E1 double;
+			border-radius: 5px;
+			margin: 2px 0 10px 1px;
+		}
+		label{
+			font-family: 'Roboto', sans-serif;
+			font-size: 15px;
+		}
+		.contenedorFechaNacimiento select{
+			width: 230px;
+		}
+		p{
+			font-family: 'Roboto', sans-serif;
+			color: #C2BFBF;
+		}
+		.boton{
+			font-family: 'Roboto', sans-serif;
+			background-color: #fff;
+			border: 2px #000 solid;
+			border-radius: 3px;
+			font-size: 20px;
+		}
+		.boton:hover{
+			background-color: #EAE7E7;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Datos Personales</h1>
+	</header>
+	<form>
+		<fieldset>
+			<label>Tipo de documento*</label>
+			<select name="tipoDocumento" required="required">
+				<option value=""> -Seleccionar- </option>
+				<option value="dni">DNI</option>
+				<option value="ci">CI</option>
+				<option value="le">LE</option>
+			</select>
+
+			<label>Numero *</label>
+			<input type="number" name="numeroDocumento" id="dni" required="required">
+
+			<label>Nombre *</label>
+			<input type="text" name="nombreUsuario" required="required">
+		
+
+			<label>Apellido *</label><br>
+			<input type="text" name="apellidoUsuario" required="required">
+
+			<br>
+
+			<label>Fecha de Nacimiento *</label>
+			<div class="contenedorFechaNacimiento">
+				<select name="dia">
+					<option value="dia">-Dia</option>
+				</select>
+				<select name="mes" required="required">
+					<option value="mes">-Mes</option>
+				</select>
+				<select name="año" required="required">
+					<option value="año">-A&ntilde;o</option>
+				</select>
+			</div>
+
+			<label>Genero *</label>
+			<select name="genero">
+				<option value="">-Seleccionar-</option>
+				<option value="masculino">Masculino</option>
+				<option value="femenino">Femenino</option>
+			</select>
+
+			<label>Estado Civil *</label>
+			<select name="estadoCivil">
+				<option value="">Soltero/a</option>
+			</select>
+
+
+			<label>Ocupacion *</label>
+			<select name="ocupacion">
+				<option value="">Otros</option>
+			</select>
+
+			<label>Cuil</label>
+			<input type="number" name="cuil">
+
+			<input class="boton" type="submit" name="">
+			<button onclick="validar()"> validar</button>
+		</fieldset>
+
+		<p>Los campos marcados con * son obligatorios.</p>
+
+		<script type="text/javascript">
+			
+			function validar(){
+				var dni = document.getElementById('dni').value;
+				var dninumero = parseInt(dni);
+				if(dninumero < 0){
+					alert(" Dni no valido");
+				}
+				else{
+					alert("Es valido");
+				}
+			}
+
+		</script>
+	</form>
+</body>
+</html>

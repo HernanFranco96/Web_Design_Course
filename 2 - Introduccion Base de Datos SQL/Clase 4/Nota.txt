@@ -1,0 +1,45 @@
+
+[] Entidad
+
+() Relacion
+
+- Union
+
+o Atributo
+
+* Atributo Primario
+
+0 Atributo Foraneo
+			     Relacion 1 a 1
+
+				[A1]->[A2]
+
+				[A1]->[A2]
+
+				[A1]->[A2]
+
+
+			  Relacion uno a muchos
+
+				[A1]->[A2]
+				    /
+				[A1]->[A2]
+				    \
+				[A1]->[A2]
+
+
+			Relacion muchos a uno
+
+				[A1]<-[A2]
+				     \
+				[A1]<-[A2]
+                                     /
+				[A1]<-[A2]
+
+			Relacion de muchos a muchos
+			
+				[A1]<->[A2]
+				    \ /
+				[A1]<->[A2]
+                                    / \
+				[A1]<->[A2]

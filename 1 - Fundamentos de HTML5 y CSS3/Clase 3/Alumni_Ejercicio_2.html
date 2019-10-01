@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alumni Ejercicio 2</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+        form{
+            width: 450px;
+            margin: auto;
+        }
+        label, h1{
+            font-family: 'Roboto', sans-serif;
+        }
+        input{
+            padding: 10px;
+            width: 400px;
+            margin: 10px 0 10px 0;
+        }
+        select{
+            padding: 10px;
+            width: 400px;
+            margin: 10px 0 10px 0;
+        }
+        textarea{
+            width: 400px;
+            margin: 10px 0 10px 0;
+        }
+        .radios > input{
+            width: 20px;
+            padding: 0;
+            margin: 10px 0 10px 0;
+        }
+        .boton > input{
+            background-color: #9BEF51;
+            border: 2px #CCCFC9 solid;
+            border-radius: 5px;
+        }
+    </style>x
+</head>
+<body>
+    <form method="GET" action="servidor.php">
+        <h1>Contacto</h1>
+
+        <label for="nameUser">Nombre</label>
+        <input type="text" name="nameUser" id="nameUser" placeholder="Juan Pedro">
+
+        <label for="emailUser">Email</label>
+        <input type="text" name="emailUser" id="emailUser" placeholder="info@miweb.com">
+
+        <label for="">Origen</label>
+        <select name="sectores" id="">
+            <option value="sA">Sector A</option>
+            <option value="sB">Sector B</option>
+            <option value="sC">Sector C</option>
+            <option value="sD">Sector D</option>
+        </select>
+
+        <label for="">Comentarios</label>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+        <div class="radios">
+            <label for="">Estado Civil:</label><br>
+            <label>Casado</label>
+            <input type="radio" name="sexo" value="casado">
+            <label>Soltero</label>
+            <input type="radio" name="sexo" value="soltero"><br>
+            <label for="">Acepta Terminos y condiciones</label><input type="checkbox" name="condicion" id="" value="condicion">
+        </div>  
+
+        <div class="boton">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularios</title>
+</head>
+<body>
+	<form method="GET" action="servidor.php" enctype="multipar/from-data">
+		<!--
+			METHOD el metodo de envio, puede ser POST o GET.
+			ACTION quien recibe la informacion en el servidor.
+			ENCTYPE habilito el envio de archivos adjuntos
+		-->
+		<!--Todo lo que hagamos hoy, tiene que estar aca dentro!! Si no, no funciona.-->
+
+		<!--Los nombres de los elementos dentro del form deben ser declarativos con respecto a la informacion dada por el usuario.-->
+
+		<!--El elemento input tiene la particuladad de que dependiendo del valor del atributo "type" voy a tener una interfaz distinta.-->
+
+		<label for="nombreUsuario"> Nombre : </label> 
+			<!--El atributo FOR del LABEL con el valor ID de un INPUT. Al hacer click en la etiqueta, me selecciona el INPUT.-->
+
+		<input type="text" name="nombreUsuario" placeholder="Nombre" id="nombreUsuario" required="required" maxlength="10" minlength="3"><br><br>
+			<!--Los INPUT de tipo TEXT son cajas de texto corto.-->
+			<!--El atributo REQUIERED convierte al campo obligatorio para que el usuario lo complete.-->
+			<!--Los atributos MAXLENGTH y MINLENGTH determinan el maximo y el minimo de un ingreso del usuario en cantidad de caracteres.-->
+			<!--PLACEHOLDER es una guia para el usuario.-->
+		<label for="apellidoUsuario"> Apellido: </label> 
+		<input type="text" name="apellidoUsuario" id="apellidoUsuario" required="required"><br><br>
+
+		<label for="password"> Password : </label>
+		<input type="password" name="password" id="password" required="required"><br><br>
+			<!-- El INPUT de tipo PASSWORD es como el TEXT pero el ingreso queda oculto.-->
+		
+		<label for="emailUsuario"> Email : </label>
+		<input type="email" name="emailUsuario" id="emailUsuario" required="required"><br><br>
+			<!--El INPUT del EMAIL es como el de TEXT, pero se diferencia al momento de hacer verificacion.-->
+
+		<label for="telefono"> Telefono : </label>
+		<input type="number" name="telefono" id="telefono" max="20" min="2"><br><br>
+			<!--El INPUT del tipo NUMBER es un cuadro de texto que solo permite el ingreso de numeros y la letra es para el exponente 2e3 = 2^3 = 8-->
+			<!--Los atributos MAX y MIN, acota el valor ingresado, no la cantidad de caracteres.-->
+
+		<label> Sexo : </label>
+		<input type="radio" name="sexo" value="Masculino"><label> Masculino</label>
+		<input type="radio" name="sexo" value="Femenino"><label> Femenino</label>
+		<input type="radio" name="sexo" value="Otros"><label> Otros</label>
+			<!--Los INPUT del tipo RADIO que pertenescan a un mismo grupo, deben llevar un mismo nombre para formar ese grupo y ademas cada uno su valor correspondiente.-->
+
+		<br>
+		<br>
+
+		<label> Estado civil : </label>
+		<select name="estadoCivil">
+			<option value="soltero"> Solter@ </option>
+			<option value="casado"> Casad@ </option>
+			<option value="divorsiado"> Divorsiad@ </option>
+			<option value="viudo"> Viud@ </option>
+			<option value="poligamo"> Poligam@ </option>
+		</select>
+
+		<br>
+		<br>
+
+		<label> Provincias : </label>
+		<select name="provincia" size="5" multiple="multiple"> 
+			<option value="bsas"> Buenos Aires </option>
+			<option value="santacruz"> Santa Cruz </option>
+			<option value="chubut"> Chubut </option>
+			<option value="cordoba"> Cordoba </option>
+		</select>
+			<!--El atributo SIZE permite agrandar la cantidad de opciones que se ven al mismo tiempo. El atributo MULTIPLE, permite al usuario seleccionar multiples opciones al mismo tiempo.-->
+
+		<br>
+		<br>
+
+		<label> Seleccionar tres equipos : </label>
+		<input type="checkbox" name="equipo" value="bocaJuniors" checked=""><label> Boca Juniors</label>
+		<input type="checkbox" name="equipo" value="riverPlate"><label> River Plate</label>
+		<input type="checkbox" name="equipo" value="independiente"><label> Independiente</label>
+		<input type="checkbox" name="equipo" value="racingClub" checked=""><label> Racing Club</label>
+		<input type="checkbox" name="equipo" value="sanLorenzo" checked=""><label> San Lorenzo</label>
+		<!--El atributo CHECKED selecciona automaticamente.-->
+		<br>
+		<br>
+
+		<label> Comentario : </label><br>
+		<textarea name="comentario"  style="height: 120px; width: 500px;"></textarea>	
+
+		<br>
+		<br>
+			<input type="FILE" name="file">
+				<!--FILE permite adjuntar un archivo-->
+		<br>
+		<br>
+
+		<input type="submit" name="">
+			<!--El INPUT del tipo SUBMIT es el boton de envio del formulario al servidor.-->
+		<input type="reset" name="">
+			<!--El INPUT del tipo RESET borra todo el contenido del formulario.-->
+		<button onclick="/*ACA INSERTAR JAVASCRIPT*/"> NO HAGO NADA</button>
+
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Ctrl + n = New pag
+Ctrl + s = Save
+Ctrl + ruedita mouse o +/-=  Agrando o achico la letra.
+<!-- Comentario -->
+Ctrl + Shif + s =  Save As
+
+
+
