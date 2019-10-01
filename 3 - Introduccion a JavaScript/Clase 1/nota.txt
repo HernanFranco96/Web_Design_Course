@@ -1,0 +1,16 @@
+Pablo Stolarczuk
+
+pablo.david.st@gmail.com
+
+Texto dentro de "" '' ``.
+const valor que nunca cambia.
+var el nombre puede contener letras, numeros, $,  _. 
+No puede comenzar con numeros ni usar palabras reservadas.
+
+ // OPERACIONES LOGICAS
+    /*
+        AND esto seria &&
+        OR  esto seria ||
+        NOT esto seria !
+    */
+        

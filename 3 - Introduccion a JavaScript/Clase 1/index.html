@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <title>Curso de Javascript</title>
+	</head>
+	<body style="background:indigo; color: white;">
+		<h1 style="background-color: greenyellow;text-align: center; color: black; width: 600px; margin: auto; border: 3px gray solid; border-radius: 10px; padding: 10px;">Curso de programación con javascript</h1>
+        <div id='mensaje' style="background:blue; width: 450px; text-align: center; font-size: 25px; color: yellow; padding: 5px; margin: auto; margin-bottom: 10px; margin-top: 25px; border: 3px black solid; border-radius: 10px;"></div>
+<script>
+    var nombre = "Hernan";
+
+    // Case 2 alert
+
+    // alert(nombre);
+
+    // Caso 2 document.write
+
+    document.write("Hola " + nombre);
+
+    // Caso 3 document.getElementById
+
+    document.getElementById('mensaje').innerHTML = 'Este texto se ingreso con innerHTML';
+
+    // Caso 4 console.log
+
+    console.log('Esto se muestra por consola');
+
+    document.write('<br> <br>');
+
+    // Incrementando un valor entero
+    var numero = 10;
+    document.write('El numero ' + numero + ' ');
+    numero++;
+    document.write('incrementado en 1 es igual a ' + numero);
+
+    var x = 5, y = 10, resultado;
+
+    document.write('<br> <br>');
+
+    // Sumar
+        resultado = x + y;
+        document.write('La suma es: ' + resultado);
+        document.write('<br>');
+    // Restar
+        resultado = x - y;
+        document.write('La resta es: ' + resultado);
+        document.write('<br>');
+    // Multiplicar
+        resultado = x * y;
+        document.write('La multiplicacion es: ' + resultado);
+        document.write('<br>');
+    // Dividir
+        resultado = x / y;
+        document.write('La division es: ' + resultado);
+        document.write('<br>');
+    // Resto
+        resultado = x % y;
+        document.write('El resto es: ' + resultado);
+        document.write('<br>');
+    
+        document.write('<br> <br>');
+
+   
+    // OPERACIONES LOGICAS
+    /*
+        AND esto seria &&
+        OR  esto seria ||
+        NOT esto seria !
+    */
+
+    var usuario = prompt('Ingrese su usuario: ');
+    var password = prompt('Ingrese su contraseña: ');
+
+    if(usuario.length > 0 && password.length > 0){
+        if(usuario == 'admin' && password == '123'){
+            alert('Bienvenido Administrador!');
+        }
+        else{
+            alert('Bienvenido usuario!');
+        }
+    }else{
+        alert('Debe ingresar algun nombre / contraseña');
+    }
+
+    
+</script>
+    </body>
+</html>
