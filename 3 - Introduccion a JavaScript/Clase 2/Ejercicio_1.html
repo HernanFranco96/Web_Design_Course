@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 1</title>
+</head>
+    <style>
+        span{
+            background-color: cadetblue;
+            color: #fff;
+            padding: 35px;
+            border: 5px #000 solid;
+            border-radius: 10px;
+            width: 300px;
+            margin: 50px auto;
+            display: block;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+<body>
+    <span id="saludo"></span>
+
+    <script>
+        var dia = new Date();
+        switch(dia.getDay())
+        {
+            case 0:
+                document.getElementById('saludo').innerHTML = 'Buen Domingo!';
+                break;
+            case 1:
+                document.getElementById('saludo').innerHTML = 'Buen Lunes!';
+                break;
+            case 2:
+                document.getElementById('saludo').innerHTML = 'Buen Martes!';
+                break;
+            case 3:
+                document.getElementById('saludo').innerHTML = 'Buen Miercoles!';
+                break;
+            case 4:
+                document.getElementById('saludo').innerHTML = 'Buen Jueves!';
+                break;
+            case 5:
+                document.getElementById('saludo').innerHTML = 'Buen Viernes!';
+                break;
+            case 6:
+                document.getElementById('saludo').innerHTML = 'Buen Sabado!';
+                break;
+        }
+    </script>
+</body>
+</html>

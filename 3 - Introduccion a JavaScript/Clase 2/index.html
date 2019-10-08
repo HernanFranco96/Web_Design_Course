@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <title>Curso de Javascript</title>
+        
+        <style>
+            body{
+                background-color: cornflowerblue;
+            }
+            .container{
+                margin-top: 50px;
+            }
+            .titulo{
+                padding: 7px;
+            }
+            .oferta{
+                background-color:deeppink;
+                color: #fff;
+                font-size: 24px;
+            }
+            .noOferta{
+                background-color: red;
+                color: #fff;
+                font-size: 24px;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="container">
+            <div class="jumbotron">
+                    <h1 class="titulo bg-primary text-center">Pago de la compra</h1>
+                    <b>Fecha:</b><span id="fecha"></span> <b>Hora:</b><span id="hora"></span>
+                    <hr>
+                    <span id="oferta"></span>
+                    <br>
+                    <ul>
+                        <li>SUB-TOTAL: <span id="sub-total"></span></li>
+                        <li>RECARGO: <span id="recargo"></span></li>
+                        <li>DESCUENTO: <span id="descuento"></span></li>
+                        <li>DESCUENTO ESPECIAL: <span id="descuentoEspecial"></span></li>
+                        <li>CUOTAS: <span id="cuotas"></span></li>
+                        <li>TIPO DE PAGO: <span id="tipo-pago"></span></li>
+                    </ul>
+                    <hr>
+
+                    <h2 class="bg-info text-left">TOTAL A PAGAR:<span id="total-pagar"></span></h2>                        
+            </div>
+
+        </div>
+
+    <script>
+
+        var fechaActual = new Date(); // Creamos un objeto Date.
+        var anio = fechaActual.getFullYear(); // getFullYear() nos da el año actual.
+        var mes = fechaActual.getMonth() + 1; // getMonth() nos da el mes actual. Al mes se le suma 1 porque javascript cuenta los meses de 0 a 11.
+        var dia = fechaActual.getDate(); // getDate() nos da el dia actual.
+
+        document.getElementById('fecha').innerHTML = ' ' + dia + '/' + mes + '/' + anio;
+
+        var hora = fechaActual.getHours(); // getHours() nos da la hora actual.
+        var minutos = fechaActual.getMinutes(); // getMinutes() nos da el minuto actual.
+        var segundos = fechaActual.getSeconds(); // getSeconds() nos da el segundo actual.
+
+        document.getElementById('hora').innerHTML = ' ' + hora + ':' + minutos + ':' + segundos;
+
+        /***************************************************************************************/
+
+        var importe, descuento, recargo, total, tipoPago, cantCuotas, descuentoEspecial, diaSemana;
+        
+        importe = parseFloat(prompt('Ingrese su importe: '));
+
+        if(importe > 0 && importe <= 10000)
+        {
+            tipoPago = confirm('¿Paga de contado?');
+
+            if(tipoPago == true){
+                descuento = importe * 0.10;
+                cantCuotas = 1;
+                if(tipoPago == true || cantCuotas == 1)
+                {
+                    recargo = 0;
+                    document.getElementById('recargo').innerHTML = 0;
+                }
+                document.getElementById('cuotas').innerHTML = 1;
+                document.getElementById('tipo-pago').innerHTML = 'Contado';
+            }
+            if(tipoPago == false)
+            {
+                descuento = importe * 0.01;
+
+                cantCuotas = parseInt(prompt('Ingrese cantidad de cuotas: '));
+
+                if(cantCuotas > 1 && cantCuotas <= 18)
+                {
+                    if(cantCuotas == 2 || cantCuotas == 3)
+                    {
+                        recargo = importe * 0.05;
+                    }
+                    if(cantCuotas == 4 || cantCuotas == 5 || cantCuotas == 6)
+                    {
+                        recargo = importe * 0.10;
+                    }
+                    if(cantCuotas > 6)
+                    {
+                        recargo = importe * 0.15;
+                    }
+                    if(cantCuotas > 1 && cantCuotas <= 18)
+                    {
+                        document.getElementById('cuotas').innerHTML = cantCuotas;
+                    }
+                    document.getElementById('recargo').innerHTML = recargo.toFixed(2);
+                    document.getElementById('tipo-pago').innerHTML = 'En Cuotas';
+                }
+                else if(cantCuotas <= 1 && cantCuotas > 18)
+                {
+                    alert('La cantidad de cuotas ingresadas no es valida.');
+                }
+            }
+
+            diaSemana = fechaActual.getDay(); // getDay() devuelve que dia de la semana es. Comienza con domingo = 0 y termina con sabado = 6
+
+            if(diaSemana == 1 || diaSemana == 4)
+            {
+                descuentoEspecial = importe * 0.05;
+                descuento = descuento + descuentoEspecial;
+                document.getElementById('oferta').innerHTML = "<span class='oferta'> Hoy es dia de oferta! </span>";
+                document.getElementById('descuentoEspecial').innerHTML = descuentoEspecial.toFixed(2);
+            }
+            else{
+                document.getElementById('oferta').innerHTML = "<span class='noOferta'> Hoy no hay oferta! </span>";
+            }
+            
+            document.getElementById('sub-total').innerHTML = importe.toFixed(2); //toFixed(cantidad de decimales) le indicamos la cantidad de decimales que queremos que escriba.
+            document.getElementById('descuento').innerHTML = descuento.toFixed(2);
+
+            total = (((importe - descuento)) + recargo) / cantCuotas;
+            document.getElementById('total-pagar').innerHTML = ' $' + total.toFixed(2);
+        }
+        else
+        {
+            alert('El valor ingresado no es valido.');
+        }
+
+        
+
+        
+    </script>
+    </body>   
+</html>

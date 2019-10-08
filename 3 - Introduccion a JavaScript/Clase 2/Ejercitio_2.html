@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto Integrador</title>
+</head>
+<body>
+    <h1 id="usuario"></h1>
+    <script>
+        var rol = prompt('Ingrese rol: ');
+        if(rol.toLocaleLowerCase() == 'admin' || rol.toLocaleLowerCase() == 'recursos')
+        {
+            var clave = parseInt(prompt('Ingrese contraseña: '));
+            if(clave == 1234)
+            {
+                var nombre = prompt('Ingrese nombre: ');
+                document.getElementById('usuario').innerHTML = 'Hola ' + nombre + ' bienvenido a nuestra aplicacion.'
+            }
+            else
+            {
+                document.getElementById('usuario').innerHTML = 'A habido un error, pregunte a su supervisor rol y contraseña correctas.'
+            }
+        }
+        else
+        {
+            document.getElementById('usuario').innerHTML = 'A habido un error, pregunte a su supervisor rol y contraseña correctas.'
+        }
+    </script>
+</body>
+</html>
