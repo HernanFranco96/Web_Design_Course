@@ -128,8 +128,76 @@
 
         /*************************************************************************/
 
-        var clubes = ['Boca Juniors', 'River Plate', 'Racing Club', 'Club Independiente', 'San Lorenzo'];
-        document.write(clubes[0]);
+        
+        var clubes = ['Boca Juniors', 'River Plate', 'Racing Club', 'Independiente', 'San Lorenzo'];        
+
+        var hinchadas = ['La Xeneizes', 'Los Millonarios', 'Los Academicos', 'Los Diablos Rojos', 'Los Cuervos'];
+        /*************************************************************************/
+        
+        /*
+        // CREAMOS UN OBJETO
+        var persona = 
+        {   // DECLARAMOS SUS ATRIBUTOS
+            nombre: 'Hernan',
+            edad: 22,
+            dni: 39664999,
+            sexo:'H',
+            fechaNac: '05/10/1996',
+            tieneRegistro: true,
+            cursos: ['HTML','MySQL','JavaScript']
+        }
+        */
+
+        /*************************************************************************/
+
+        // UN ARRAY DE OBJETOS
+        var listado =  [   
+                        {nombre:'Hernan',apellido:'Franco',edad:22},
+                        {nombre:'Camila',apellido:'Franco',edad:19},
+                        {nombre:'Martin',apellido:'Franco',edad:18},
+                       ]
+        /*
+        for(var i = 0; i < listado.length; i++)
+        {
+            console.log(listado[i].nombre + ' ' + listado[i].edad);
+        }
+        */
+
+        //AGREGA UN NUEVO ELEMENTO AL FINAL
+
+        clubes.push('Defensa y Justicia');
+
+        //AGREGA UN NUEVO ELEMENTO AL PRINCIPIO
+
+        clubes.unshift('Colon');
+
+        //ORDENAR UN VECTOR CLUBES
+        
+        clubes.sort();
+
+        //REVIERTE EL SENTIDO DEL ARRAY
+
+        //clubes.reverse();
+
+        //BORRA EL ULTIMO ELEMENTO
+
+        //clubes.pop();
+
+        //BORRA EL PRIMER ELEMENTO
+
+        //clubes.shift();
+
+        //AGREGA UN ELEMENTO EN LA POSICION ELEGIDA. (Donde comienza,1 si es para borrar elemento en tal posicion. 0 no borra elemento en esa posicion sino que lo corre una posicion a la derecha, 'elemento que remplaza')
+
+        //clubes.splice(2,0,'Gimnasia de la Plata');
+
+        console.log(clubes);
+
+        //CONCATENAMOS 2 VECTORES
+        
+        var nuevoVector = clubes.concat(hinchadas);
+
+        console.log(nuevoVector);
         
     </script>
 </body>
