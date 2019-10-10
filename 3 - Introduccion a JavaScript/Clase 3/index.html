@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 3</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        hr{
+            width: 600px;
+            margin: 20px auto;
+            box-shadow: grey 2px 2px 2px 2px;
+        }
+    </style>
+</head>
+<body>
+    <h3 style=" background-color:aquamarine; 
+                text-align: center;
+                width: 500px;
+                padding: 20px;
+                margin: auto;">
+                Curso de programacion con JavaScript
+    </h3>
+
+    <!--
+    <div id="pesos">
+        <i class="fas fa-drumstick-bite"></i>
+        <i class="fab fa-angellist"></i>
+    </div>
+    -->
+    <hr>
+
+    <span style="   display: block;
+                    width: 200px; 
+                    font-size: 20px;    
+                    margin: auto; 
+                    margin-top: 10px;
+                    background-color: grey;
+                    color: #fff;
+                    padding: 15px;
+                    border: 5px #000 solid;
+                    border-radius: 10px;
+                    text-align: center;" 
+                    id="dia">
+    </span>
+
+    <hr>
+
+    <script>
+        var fecha = new Date();
+        var dias = fecha.getDay();
+
+        switch(dias)
+        {
+            case 0:
+                document.getElementById('dia').innerHTML = "Hoy es domingo!";
+                break;
+            case 1:
+                document.getElementById('dia').innerHTML = "Hoy es Lunes!";
+                break;
+            case 2:
+                document.getElementById('dia').innerHTML = "Hoy es Martes!";
+                break;
+            case 3:
+                document.getElementById('dia').innerHTML = "Hoy es Miercoles!";
+                break;
+            case 4:
+                document.getElementById('dia').innerHTML = "Hoy es Jueves!";
+                break;
+            case 5:
+                document.getElementById('dia').innerHTML = "Hoy es Viernes!";
+                break;
+            case 6:
+                document.getElementById('dia').innerHTML = "Hoy es Sabado!";
+                break;
+        }
+
+        /*************************************************************************/
+
+        /*
+        var opcion = prompt('Elija una opcion del 1 al 3');
+        
+        switch(opcion)
+        {
+            case '1':
+            document.write('<i class="fas fa-dog fa-3x"></i>');
+                break;
+            case '2':
+                document.write('<i class="fas fa-cat fa-3x"></i>');
+                break;
+            case '3':
+                document.write('<i class="fas fa-frog fa-3x"></i>');
+                break;
+            default:
+                alert('La opcion no es correcta!');
+        }
+        */
+
+        /*************************************************************************/
+
+        /*
+        for(var i = 0; i < 10; i++)
+        {
+            for(var j = 0; j < i + 1; j++)
+            {
+                document.write('<i class="fas fa-dog fa-3x"></i>');
+            }
+            document.write('<br>');
+        }
+        */
+        
+        /*************************************************************************/
+
+        /*
+        var continuar = true, numero, acumulador = 0, cont = 0;
+
+        while(continuar == true)
+        {
+            numero = parseInt(prompt('ingrese un numero: '));
+            acumulador += numero;
+            cont ++;
+            continuar = confirm('Desea continuar?');
+        }
+
+        document.write('Total acumulado: ' + acumulador + '. Cantidad: ' + cont);
+        */
+
+        /*************************************************************************/
+
+        var clubes = ['Boca Juniors', 'River Plate', 'Racing Club', 'Club Independiente', 'San Lorenzo'];
+        document.write(clubes[0]);
+        
+    </script>
+</body>
+</html>
