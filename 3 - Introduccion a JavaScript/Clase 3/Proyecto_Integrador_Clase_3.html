@@ -13,18 +13,15 @@
             font-family: 'Roboto', sans-serif;
             color: #fff;
         }
-        .tabla{
+        table{
             display: block;
-            width: 250px;
-            height: 130px;
-            margin: 100px auto;
-            text-align: center;
+            width: 200px;
+            margin: 200px auto;
             padding: 15px;
-            word-spacing: 25px;
+            /*word-spacing: 25px; Separacion entre palabras*/
             background-color: rgba(0,0,0,.5);
-        }
-        .hijo{
-            word-spacing: 25px; /*Separacion entre palabras*/
+            border: 5px #190436 solid;
+            border-radius: 10px;
         }
         h5{
             margin-bottom: 0px;
@@ -32,17 +29,31 @@
     </style>
 </head>
 <body>
+
     <h1 id="usuario"></h1>
 
-    <div class="tabla">
-        <span class="hijo" id="columna_0"></span>
-        <br>
-        <span class="hijo" id="columna_1"></span>
-        <br>
-        <span class="hijo" id="columna_2"></span>
-        <br>
-        <span class="hijo" id="columna_3"></span>
-    </div>
+    <table>
+        <tr>
+            <th id="columna_0_1"></th>
+            <th id="columna_0_2"></th>
+            <th id="columna_0_3"></th>
+        </tr>
+        <tr>
+            <td id="columna_1_1"></td>
+            <td id="columna_1_2"></td>
+            <td id="columna_1_3"></td>
+        </tr>
+        <tr>
+            <td id="columna_2_1"></td>
+            <td id="columna_2_2"></td>
+            <td id="columna_2_3"></td>
+        </tr>
+        <tr>
+            <td id="columna_3_1"></td>
+            <td id="columna_3_2"></td>
+            <td id="columna_3_3"></td>
+        </tr>
+    </table>
 
 
     <script>
@@ -60,10 +71,21 @@
                         {nombre:"Ana",apellido:"Garcia",edad:25},
                         {nombre:"Maria",apellido:"Zarate",edad:34},];
 
-                document.getElementById('columna_0').innerHTML = "Nombre Apellido Edad";
-                document.getElementById('columna_1').innerHTML = empleados[0].nombre + ' ' + empleados[0].apellido + ' ' + empleados[0].edad;
-                document.getElementById('columna_2').innerHTML = empleados[1].nombre + ' ' + empleados[1].apellido + ' ' + empleados[1].edad;
-                document.getElementById('columna_3').innerHTML = empleados[2].nombre + ' ' + empleados[2].apellido + ' ' + empleados[2].edad;
+                document.getElementById('columna_0_1').innerHTML = "Nombre";
+                document.getElementById('columna_0_2').innerHTML = "Apellido";
+                document.getElementById('columna_0_3').innerHTML = "Edad";
+
+                document.getElementById('columna_1_1').innerHTML = empleados[0].nombre;
+                document.getElementById('columna_1_2').innerHTML = empleados[0].apellido;
+                document.getElementById('columna_1_3').innerHTML = empleados[0].edad;
+            
+                document.getElementById('columna_2_1').innerHTML = empleados[1].nombre;
+                document.getElementById('columna_2_2').innerHTML = empleados[1].apellido;
+                document.getElementById('columna_2_3').innerHTML = empleados[1].edad;
+
+                document.getElementById('columna_3_1').innerHTML = empleados[2].nombre;
+                document.getElementById('columna_3_2').innerHTML = empleados[2].apellido;
+                document.getElementById('columna_3_3').innerHTML = empleados[2].edad;
             }
             else
             {
@@ -74,7 +96,6 @@
         {
             document.getElementById('usuario').innerHTML = 'A habido un error, pregunte a su supervisor rol y contraseña correctas.';
         }
-
        
     </script>
 </body>
