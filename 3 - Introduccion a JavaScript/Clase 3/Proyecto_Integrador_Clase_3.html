@@ -6,12 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Proyecto Integrador Clase 3</title>
     <style> 
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+        body{
+            background-color: #505050;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+        }
         .tabla{
             display: block;
-            background-color: aquamarine;
-            border: 5px #000 solid;
-            width: 300px;
+            width: 250px;
+            height: 130px;
+            margin: 100px auto;
             text-align: center;
+            padding: 15px;
+            word-spacing: 25px;
+            background-color: rgba(0,0,0,.5);
+        }
+        .hijo{
+            word-spacing: 25px; /*Separacion entre palabras*/
         }
         h5{
             margin-bottom: 0px;
@@ -19,27 +32,50 @@
     </style>
 </head>
 <body>
-
+    <h1 id="usuario"></h1>
 
     <div class="tabla">
-        <h5>Nombre Apellido Edad</h5>
+        <span class="hijo" id="columna_0"></span>
         <br>
-        <span id="columna_1"></span><br>
-        <span id="columna_2"></span><br>
-        <span id="columna_3"></span>
+        <span class="hijo" id="columna_1"></span>
+        <br>
+        <span class="hijo" id="columna_2"></span>
+        <br>
+        <span class="hijo" id="columna_3"></span>
     </div>
 
 
     <script>
-        var empleados = [
-                            {nombre:"Juan",apellido:"Pedro",edad:40},
-                            {nombre:"Ana",apellido:"Garcia",edad:25},
-                            {nombre:"Maria",apellido:"Zarate",edad:34},
-                        ]
+        var rol = prompt('Ingrese rol: ');
+        if(rol.toLocaleLowerCase() == 'admin' || rol.toLocaleLowerCase() == 'recursos')
+        {
+            var clave = parseInt(prompt('Ingrese contraseña: '));
+            if(clave == 1234)
+            {
+                var nombre = prompt('Ingrese nombre: ');
+                document.getElementById('usuario').innerHTML = 'Hola ' + nombre + ' bienvenido a nuestra aplicacion.';
 
-        document.getElementById('columna_1').innerHTML = empleados[0].nombre + ' ' + empleados[0].apellido + ' ' + empleados[0].edad;
-        document.getElementById('columna_2').innerHTML = empleados[1].nombre + ' ' + empleados[1].apellido + ' ' + empleados[1].edad;
-        document.getElementById('columna_3').innerHTML = empleados[2].nombre + ' ' + empleados[2].apellido + ' ' + empleados[2].edad;
+                var empleados = [
+                        {nombre:"Juan",apellido:"Pedro",edad:40},
+                        {nombre:"Ana",apellido:"Garcia",edad:25},
+                        {nombre:"Maria",apellido:"Zarate",edad:34},];
+
+                document.getElementById('columna_0').innerHTML = "Nombre Apellido Edad";
+                document.getElementById('columna_1').innerHTML = empleados[0].nombre + ' ' + empleados[0].apellido + ' ' + empleados[0].edad;
+                document.getElementById('columna_2').innerHTML = empleados[1].nombre + ' ' + empleados[1].apellido + ' ' + empleados[1].edad;
+                document.getElementById('columna_3').innerHTML = empleados[2].nombre + ' ' + empleados[2].apellido + ' ' + empleados[2].edad;
+            }
+            else
+            {
+                document.getElementById('usuario').innerHTML = 'A habido un error, pregunte a su supervisor rol y contraseña correctas.';
+            }
+        }
+        else
+        {
+            document.getElementById('usuario').innerHTML = 'A habido un error, pregunte a su supervisor rol y contraseña correctas.';
+        }
+
+       
     </script>
 </body>
 </html>
