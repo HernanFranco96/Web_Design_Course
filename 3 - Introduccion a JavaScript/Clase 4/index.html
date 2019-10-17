@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <title>Curso de Javascript</title>
+        <style>
+            .pb{
+                background-color: aquamarine;
+                width: 100px;
+                margin: 5px auto;
+                text-align: center;
+            }
+        </style>
+	</head>
+	<body>
+        <h3 style="background-color:gold;text-align: center">Curso de programación con javascript</h3>
+        
+        <h5 id="prueba"></h5>
+
+
+
+        <script>
+            var detalle = '';
+
+            for(var i=0;i<10;i++){
+                detalle = detalle + `
+                    <div>
+                        <p class="pb">${i + 1}</p>
+                    </div>
+                `
+            }
+            
+            document.getElementById('prueba').innerHTML = detalle;
+        
+        </script>
+	</body>
+</html>
