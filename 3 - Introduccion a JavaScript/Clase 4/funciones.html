@@ -31,7 +31,41 @@
 
     <h2 id="mostrar"></h2>
 
+    <div onmousemove="alert('DIV')" id="cambio">
+    <!--
+        onmousemove = Cuando paso el mouse por el div
+    -->
+        <input type="text" onblur="ejemploOnBlur(this)">
+        <!--
+            onfocus = Cuando hace click dentro del input
+            oninput = Cuando escribe
+            onblur = Cuando sale del input
+            this = Objeto que obtiene todas las caracteristicas del input
+        -->
+        <button onclick="cambiarFondo()">Aceptar</button>
+        <!--
+            onclick = Cuando haga click
+            ondblclick = Doble click
+            onmousemove = Cuando pasamos el mouse
+            onmouseup = Cuando soltamos el click 
+            onmouseout = Cuando el mouse se retire del boton
+            onmousedown = Cuando el mouse se pone encima del boton
+        -->
+    </div>
+    
 <script>
+
+    function ejemploOnBlur(param){
+        console.log(param.value); //value muestra el valor de param
+    }
+
+    function cambiarFondo(){
+        document.getElementById("cambio").style.background = '#000';
+        document.getElementById("cambio").style.width = '400px';
+        document.getElementById("cambio").style.margin = 'auto';
+        document.getElementById("cambio").style.textAlign = 'center';
+        document.getElementById("cambio").style.padding = '2px';
+    }
 
     function mostrarFecha(){
         var fecha = new Date();
@@ -63,7 +97,7 @@
         
     }
 
-    document.getElementById('mostrar').innerHTML = mostrarFecha2();
+    //document.getElementById('mostrar').innerHTML = mostrarFecha2();
     //document.querySelector('#ej2').innerHTML = funcion_3(5,4);
 
 </script>

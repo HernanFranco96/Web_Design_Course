@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .contenedor{
+            text-align: center;
+            background-color: blanchedalmond;
+            width: 250px;
+            height: 150px;
+            margin: 100px auto;
+            border: 2px #000 solid;
+            padding: 5px;
+        }
+        #num1, #num2{
+            text-align: center;
+            width: 38%;
+            margin-top: 5px;
+        }
+        #num2{
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CALCULADORA</h1>
+    <div class="contenedor">
+        <input type="text" id="num1">
+        <br>
+        <input type="text" id="num2">
+        <br>
+        <button onclick="calcular('+')">+</button>
+        <button onclick="calcular('-')">-</button>
+        <button onclick="calcular('*')">*</button>
+        <button onclick="calcular('/')">/</button>
+        <br>
+        <h2 id="resultado"></h2>
+    </div>
+    <script>
+
+        function calcular(signo){
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+
+            var resultado = 0;
+
+            switch(signo){
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    if(num2 == 0){
+                        alert('Division por cero no permitida');
+                        resultado = 0;
+                    }else{
+                        resultado = num1 / num2;
+                        resultado;
+                    }
+                    break;
+                
+            }
+
+            document.getElementById('resultado').innerHTML = resultado.toFixed(2);
+        }
+        
+        
+    
+    </script>
+</body>
+</html>
