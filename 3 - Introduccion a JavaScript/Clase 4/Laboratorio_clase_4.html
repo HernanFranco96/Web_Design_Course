@@ -7,6 +7,9 @@
     <title>Laboratorio</title>
 </head>
 <body>
+    <div id="caja" style="width: 200px; color: white;">
+        <span id="texto"></span>
+    </div>
     <button onclick="cambiarColor(this)">Blue</button>
     <button onclick="cambiarColor(this)">Red</button>
     <button onclick="cambiarColor(this)">Green</button>
@@ -15,7 +18,28 @@
     <script>
         
         function cambiarColor(boton){
-            alert(boton.innerHTML);//Mostramos el texto
+
+            if(boton.innerHTML.toLocaleLowerCase() == 'blue')
+            {
+                document.getElementById('caja').style.backgroundColor = 'blue';
+                document.getElementById('texto').innerHTML = "El color es " + boton.innerHTML;
+            }
+            else if(boton.innerHTML.toLocaleLowerCase() == 'red')
+            {
+                document.getElementById('caja').style.backgroundColor = 'red';
+                document.getElementById('texto').innerHTML = "El color es " + boton.innerHTML;
+            }
+            else if(boton.innerHTML.toLocaleLowerCase() == 'green')
+            {
+                document.getElementById('caja').style.backgroundColor = 'green';
+                document.getElementById('texto').innerHTML = "El color es " + boton.innerHTML;
+            }
+            else if(boton.innerHTML.toLocaleLowerCase() == 'pink')
+            {
+                document.getElementById('caja').style.backgroundColor = 'pink';
+                document.getElementById('texto').innerHTML = "El color es " + boton.innerHTML;
+            }
+            
         }
         
     </script>
