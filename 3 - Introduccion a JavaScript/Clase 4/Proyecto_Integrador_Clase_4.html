@@ -49,6 +49,7 @@
         <br>
     
         <button onclick="agregar()">Aceptar</button>
+        <button onclick="actualizar()">Actualizar</button>
     </div>
 
 <script>
@@ -97,18 +98,21 @@
     {
         function agregar()
         {
-            var nombre = document.getElementById('nombreUsuario');
-            var apellido = document.getElementById('apellidoUsuario');
-            var edad = document.getElementById('edadUsuario');
+            var nombre = document.getElementById('nombreUsuario').value;
+            var apellido = document.getElementById('apellidoUsuario').value;
+            var edad = parseInt(document.getElementById('edadUsuario').value);
         
-            empleados.push(nombre,apellido,edad);
+            empleados.push({nombre,apellido,edad});
+        }
+    }
 
+    function actualizar(){
+        for(var i = 0; i < empleados.length;i++){
             agregando = agregando + `
                 <div>
-                    <p class="tabla">${empleados.nombre + ' ' + empleados.apellido + ' ' + empleados.edad}</p>
+                    <p class="tabla">${empleados[i].nombre + ' ' + empleados[i].apellido + ' ' +empleados[i].edad}</p>
                 </div>
             `
-
         }
     }
 </script>
