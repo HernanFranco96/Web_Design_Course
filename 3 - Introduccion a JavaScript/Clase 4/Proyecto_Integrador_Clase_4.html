@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto integradir clase 4</title>
+    <style> 
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+        body{
+            background-color: #505050;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+        }
+        .tabla{
+            display: block;
+            width: 200px;
+            margin: auto;
+            text-align: center;
+            padding: 15px;
+            word-spacing: 25px; /**Separacion entre palabras**/
+            background-color: rgba(0,0,0,.5);
+        }
+        h5{
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="usuario"></h1>
+
+    <h5 id="agregar"></h5>
+    
+    <div class="contenedor">
+        <label for="">Nombre</label>
+        <br>
+        <input type="text" name="" id="nombreUsuario">
+        <br>
+    
+        <label for="">Apellido</label>
+        <br>
+        <input type="text" name="" id="apellidoUsuario">
+        <br>
+    
+        <label for="">Edad</label>
+        <br>
+        <input type="text" name="" id="edadUsuario">
+        <br>
+    
+        <button onclick="agregar()">Aceptar</button>
+    </div>
+
+<script>
+    var aprobado = false, agregando = '';
+
+    var empleados = [
+                    {nombre:"Juan",apellido:"Pedro",edad:40},
+                    {nombre:"Ana",apellido:"Garcia",edad:25},
+                    {nombre:"Maria",apellido:"Zarate",edad:34},];
+
+    var rol = prompt('Ingrese rol: ');
+
+    if(rol.toLocaleLowerCase() == 'admin' || rol.toLocaleLowerCase() == 'recursos')
+    {
+        var clave = parseInt(prompt('Ingrese contraseña: '));
+        if(clave == 1234)
+        {
+            var nombre = prompt('Ingrese nombre: ');
+            document.getElementById('usuario').innerHTML = 'Hola ' + nombre + ' bienvenido a nuestra aplicacion.';
+
+            for(var i = 0; i < empleados.length;i++){
+                agregando = agregando + `
+                    <div>
+                        <p class="tabla">${empleados[i].nombre + ' ' + empleados[i].apellido + ' ' +empleados[i].edad}</p>
+                    </div>
+                `
+            }
+
+            document.getElementById('agregar').innerHTML = agregando;
+            aprobado = true;
+            //El usuario ingreso con exito.
+        }
+        else
+        {
+            //El usuario no ingreso la contraseña correcta
+            document.getElementById('usuario').innerHTML = 'A habido un error, pregunte a su supervisor rol y contraseña correctas.';
+        }
+    }
+    else
+    {
+        //El usuario no ingreso el rol correcto
+        document.getElementById('usuario').innerHTML = 'A habido un error, pregunte a su supervisor rol y contraseña correctas.';
+    }
+           
+    if(aprobado)
+    {
+        function agregar()
+        {
+            var nombre = document.getElementById('nombreUsuario');
+            var apellido = document.getElementById('apellidoUsuario');
+            var edad = document.getElementById('edadUsuario');
+        
+            empleados.push(nombre,apellido,edad);
+
+            agregando = agregando + `
+                <div>
+                    <p class="tabla">${empleados.nombre + ' ' + empleados.apellido + ' ' + empleados.edad}</p>
+                </div>
+            `
+
+        }
+    }
+</script>
+</body>
+</html>

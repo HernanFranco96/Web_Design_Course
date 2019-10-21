@@ -13,12 +13,13 @@
             font-family: 'Roboto', sans-serif;
             color: #fff;
         }
-        table{
+        .tabla{
             display: block;
             width: 200px;
-            margin: 200px auto;
+            margin: auto;
+            text-align: center;
             padding: 15px;
-            /*word-spacing: 25px; Separacion entre palabras*/
+            word-spacing: 25px; /**Separacion entre palabras**/
             background-color: rgba(0,0,0,.5);
             border: 5px #190436 solid;
             border-radius: 10px;
@@ -32,29 +33,7 @@
 
     <h1 id="usuario"></h1>
 
-    <table>
-        <tr>
-            <th id="columna_0_1"></th>
-            <th id="columna_0_2"></th>
-            <th id="columna_0_3"></th>
-        </tr>
-        <tr>
-            <td id="columna_1_1"></td>
-            <td id="columna_1_2"></td>
-            <td id="columna_1_3"></td>
-        </tr>
-        <tr>
-            <td id="columna_2_1"></td>
-            <td id="columna_2_2"></td>
-            <td id="columna_2_3"></td>
-        </tr>
-        <tr>
-            <td id="columna_3_1"></td>
-            <td id="columna_3_2"></td>
-            <td id="columna_3_3"></td>
-        </tr>
-    </table>
-
+    <h5 id="agregar"></h5>
 
     <script>
         var rol = prompt('Ingrese rol: ');
@@ -71,21 +50,17 @@
                         {nombre:"Ana",apellido:"Garcia",edad:25},
                         {nombre:"Maria",apellido:"Zarate",edad:34},];
 
-                document.getElementById('columna_0_1').innerHTML = "Nombre";
-                document.getElementById('columna_0_2').innerHTML = "Apellido";
-                document.getElementById('columna_0_3').innerHTML = "Edad";
+                var agregando = '';
 
-                document.getElementById('columna_1_1').innerHTML = empleados[0].nombre;
-                document.getElementById('columna_1_2').innerHTML = empleados[0].apellido;
-                document.getElementById('columna_1_3').innerHTML = empleados[0].edad;
-            
-                document.getElementById('columna_2_1').innerHTML = empleados[1].nombre;
-                document.getElementById('columna_2_2').innerHTML = empleados[1].apellido;
-                document.getElementById('columna_2_3').innerHTML = empleados[1].edad;
+                for(var i = 0; i < empleados.length;i++){
+                    agregando = agregando + `
+                        <div>
+                            <p class="tabla">${empleados[i].nombre + ' ' + empleados[i].apellido + ' ' +empleados[i].edad}</p>
+                        </div>
+                    `
+                }
 
-                document.getElementById('columna_3_1').innerHTML = empleados[2].nombre;
-                document.getElementById('columna_3_2').innerHTML = empleados[2].apellido;
-                document.getElementById('columna_3_3').innerHTML = empleados[2].edad;
+                document.getElementById('agregar').innerHTML = agregando;
             }
             else
             {
