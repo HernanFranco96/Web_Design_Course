@@ -49,7 +49,6 @@
         <br>
     
         <button onclick="agregar()">Aceptar</button>
-        <button onclick="actualizar()">Actualizar</button>
     </div>
 
 <script>
@@ -70,13 +69,8 @@
             var nombre = prompt('Ingrese nombre: ');
             document.getElementById('usuario').innerHTML = 'Hola ' + nombre + ' bienvenido a nuestra aplicacion.';
 
-            for(var i = 0; i < empleados.length;i++){
-                agregando = agregando + `
-                    <div>
-                        <p class="tabla">${empleados[i].nombre + ' ' + empleados[i].apellido + ' ' +empleados[i].edad}</p>
-                    </div>
-                `
-            }
+            //Llamamos a la funcion actualizar
+            actualizar(empleados);
 
             document.getElementById('agregar').innerHTML = agregando;
             aprobado = true;
@@ -106,7 +100,7 @@
         }
     }
 
-    function actualizar(){
+    function actualizar(empleados){
         for(var i = 0; i < empleados.length;i++){
             agregando = agregando + `
                 <div>
