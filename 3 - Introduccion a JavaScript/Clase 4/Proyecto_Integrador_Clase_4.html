@@ -9,9 +9,55 @@
         @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
         body{
-            background-color: #505050;
+            background-color: rgb(138, 135, 135);
             font-family: 'Roboto', sans-serif;
             color: #fff;
+        }
+        /************************************************************************************/
+        .cajaColores{
+            width: 500px;
+            margin: 20px auto;
+            padding: 15px;
+            text-align: center;
+        }
+        .cajaTexto{
+            margin: 10px auto;
+            width: 100%;
+            padding: 10px;
+        }
+        .cajaColores button{
+            padding: 10px;
+            border: 3px #000 solid;
+            border-radius: 10px;
+            width: 100px;
+            color: #000;
+        }
+        .rojo{
+            background-color: red;
+        }
+        .azul{
+            background-color: blue;
+        }
+        .verde{
+            background-color: green;
+        }
+        .rosa{
+            background-color: pink;
+        }
+        /************************************************************************************/
+        h1{
+            text-align: center;
+        }
+        .contenedor{
+            width: 300px;
+            margin: 50px auto;
+            border: 3px crimson solid;
+        }
+        .contenedor label{
+            font-size: 25px;
+        }
+        .contenedor input{
+            width: 80%;
         }
         .tabla{
             display: block;
@@ -28,10 +74,19 @@
     </style>
 </head>
 <body>
+
+    <div class="cajaColores">
+        <div class="cajaTexto" id="caja" style="width: 200px; color: white;">
+            <span id="texto"></span>
+        </div>
+        <button class="azul" onclick="cambiarColor(this)">Blue</button>
+        <button class="rojo" onclick="cambiarColor(this)">Red</button>
+        <button class="verde" onclick="cambiarColor(this)">Green</button>
+        <button class="rosa" onclick="cambiarColor(this)">Pink</button>
+    </div>
+    
     <h1 id="usuario"></h1>
 
-    <h5 id="agregar"></h5>
-    
     <div class="contenedor">
         <label for="">Nombre</label>
         <br>
@@ -51,13 +106,16 @@
         <button onclick="agregar()">Aceptar</button>
     </div>
 
-<script>
-    var aprobado = false, agregando = '';
+    <table id="mostrar">
 
-    var empleados = [
-                    {nombre:"Juan",apellido:"Pedro",edad:40},
-                    {nombre:"Ana",apellido:"Garcia",edad:25},
-                    {nombre:"Maria",apellido:"Zarate",edad:34},];
+    </table>
+
+<script>
+    var aprobado = false;
+
+    var empleados = [{nombre:"Juan",apellido:"Pedro",edad:40},
+                     {nombre:"Ana",apellido:"Garcia",edad:25},
+                     {nombre:"Maria",apellido:"Zarate",edad:34}];
 
     var rol = prompt('Ingrese rol: ');
 
@@ -69,12 +127,8 @@
             var nombre = prompt('Ingrese nombre: ');
             document.getElementById('usuario').innerHTML = 'Hola ' + nombre + ' bienvenido a nuestra aplicacion.';
 
-            //Llamamos a la funcion actualizar
-            actualizar(empleados);
-
-            document.getElementById('agregar').innerHTML = agregando;
-            aprobado = true;
             //El usuario ingreso con exito.
+            aprobado = true;
         }
         else
         {
@@ -97,17 +151,45 @@
             var edad = parseInt(document.getElementById('edadUsuario').value);
         
             empleados.push({nombre,apellido,edad});
+
+            console.log('Empleado agregado con exito!');
+
+            listar(empleados);
         }
     }
 
-    function actualizar(empleados){
+    function listar(empleados){
+        var html = '';
+        var fila = '';
+
+        //document.getElementById('mostrar').innerHTML = "";
+
+        fila = `
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        `
+
+        html = html + fila;
+
         for(var i = 0; i < empleados.length;i++){
-            agregando = agregando + `
-                <div>
-                    <p class="tabla">${empleados[i].nombre + ' ' + empleados[i].apellido + ' ' +empleados[i].edad}</p>
-                </div>
+            fila = `
+                <tr>
+                    <td>${empleados[i].nombre}</td>
+                    <td>${empleados[i].apellido}</td>
+                    <td>${empleados[i].edad}</td>
+                </tr>
             `
+            html = html + fila;
         }
+        document.getElementById('mostrar').innerHTML = html;
+    }
+
+    function cambiarColor(boton){
+        document.getElementById('caja').style.backgroundColor = boton.innerHTML;
+        document.getElementById('texto').innerHTML = "El color es " + boton.innerHTML;
     }
 </script>
 </body>
