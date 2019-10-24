@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--<script src="jquery.js"></script>-->
+    <title>Clase 5</title>
+    <style>
+        .uno{
+            background-color: aqua;
+        }
+        .dos{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid ">
+        <h1 id="titulo">Titulo</h1>
+
+        <div class="border border-primary" id="marcoTabla">
+            <input id="nombre" type="text">
+            <button id="boton">Cambiar</button>
+        </div>
+
+        <hr>
+
+        <button id="foco">Hacer foco</button>
+        <button id="seleccionar">Seleccionar</button>
+
+        <hr>
+
+        <button onclick="aparecerTitulo()">Aparecer</button>
+        <button onclick="desaparecerTitulo()">Desaparecer</button>
+        <button onclick="hacerToggle()">Toggle</button>
+        <button onclick="hacerFadein()">Hacer Fade In</button>
+        <button onclick="hacerFadeout()">Hacer Fade Out</button>
+        <button onclick="hacerFadetoggle()">Hacer Fade Toggle</button>
+
+        <hr>
+
+        <button onclick="hacerApperd()">Append</button>
+        <button onclick="hacerPrepend()">Prepend</button>
+        <button onclick="hacerAfter()">After</button>
+        <button onclick="hacerBefore()">Before</button>
+
+        <hr>
+
+        <button onclick="vaciar()">Vaciar</button>
+        <button onclick="remover()">Remover</button>
+    </div>
+<script>
+    // Agregar eventos a elementos HTML por ejemplo un boton, un input, un div ...etc
+    $("#boton").click(escribir);
+    //$("#nombre").focus(leer);
+    $("#titulo").hover(cambiarColor);
+    $("#titulo").mouseleave(sacarClase); //Cuando el mouse se va
+    $("#titulo").css("font-size","50px"); //Modifica la clase
+    
+    $("#foco").dblclick(hacerFoco);
+    $("#seleccionar").dblclick(seleccionar);
+
+    function escribir(){
+        var texto = $("#nombre").val(); //val() obtiene el valor del input
+        $("#titulo").text(texto);
+    }
+    function cambiarColor(){
+        $("#titulo").addClass("uno"); //agrega una clase
+    }
+    function sacarClase(){
+        $("#titulo").removeClass("uno");
+    }
+    function hacerFoco(){
+        $("#nombre").focus();
+    }
+    function seleccionar(){
+        $("#nombre").select();
+    }
+    function aparecerTitulo(){
+        $("#titulo").show('slow');
+    }
+    function desaparecerTitulo(){
+        $("#titulo").hide('fast');
+    }
+    function hacerToggle(){
+        //Si esta show lo pasa a hide y si esta hide lo pasa a show
+        $("#titulo").toggle();
+    }
+    function hacerFadein(){
+        $("#titulo").fadeIn();
+    }
+    function hacerFadeout(){
+        $("#titulo").fadeOut();
+    }
+    function hacerFadetoggle(){
+        $("#titulo").fadeToggle(3000);
+    }
+    function hacerApperd(){
+        $("#marcoTabla").append('<i class="fa fa-star"></i>');
+    }
+    function hacerPrepend(){
+        $("#marcoTabla").prepend('<i class="fa fa-star"></i>');
+    }
+    function hacerAfter(){
+        $("#marcoTabla").after('<i class="fa fa-star"></i>');
+    }
+    function hacerBefore(){
+        $("#marcoTabla").before('<i class="fa fa-star"></i>');
+    }
+    function vaciar(){
+        $("#marcoTabla").empty();
+    }
+    function remover(){
+        $("#marcoTabla").remove();
+    }
+</script>
+</body>
+</html>

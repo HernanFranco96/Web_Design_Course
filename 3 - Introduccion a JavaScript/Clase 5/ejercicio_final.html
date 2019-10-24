@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Ejercicio Final</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <td><input type="text" id="nombre"></td>
+                <td><span id="m-nombre"></span></td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td><input type="text" id=""></td>
+            </tr>
+            <tr>
+                <th>Edad</th>
+                <td><input type="number" id=""></td>
+            </tr>
+        </table>
+        <button onclick="agregar()">Aceptar</button>
+    </div>
+
+<script>
+    $("#nombre").focus(function(){mensaje(1)});
+    $("#nombre").blur(function(){ocultarMensaje()});
+
+    function mensaje(valor){
+        if(valor==1){
+            $("#m-nombre").text("Ingrese un nombre");
+        }
+    }
+    function ocultarMensaje(){
+        $("#m-nombre").hide();
+    }
+
+    function agregar(){
+        var nombre = $("#nombre").val();
+        var apellido = $("#apellido").val();
+        var edad = $("#edad").val();
+
+        if(nombre == '' || apellido == '' || edad == '')
+        {
+            $("#mensaje").text("Error, uno de los datos es vacio");
+        }
+        else{
+            var fila = `
+                <tr>
+                    <th>${nombre}</th>
+                    <th>${apellido}</th>
+                    <th>${edad}</th>
+                </tr>
+            `;
+
+            $("#listado").append(fila);
+        }
+    }
+</script>
+</body>
+</html>
