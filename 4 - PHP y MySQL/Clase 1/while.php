@@ -26,8 +26,8 @@
         }*/
 
         do{
-            echo "<div style='background-color:red; 
-                color:white; 
+            echo "<div style='background-color:blue; 
+                color:yellow; 
                 width: 25px; 
                 margin: auto; 
                 margin-bottom: 20px; 

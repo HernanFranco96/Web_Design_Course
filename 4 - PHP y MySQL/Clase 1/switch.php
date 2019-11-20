@@ -7,26 +7,37 @@
     <title>Switch</title>
     <style>
         .estilo{
-            background-color:blue; 
-            color:yellow; 
-            width: 25px; 
+            background-color:black; 
+            color:white; 
+            width: 600px; 
             margin: auto; 
             margin-bottom: 20px; 
+            margin-top: 50px;
             text-align:center;
+            padding: 20px;
+            font-size: 20px;
+            border: 3px solid grey;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <?php
 
-        $edad = 22;
+        $cantidad_monedas = 22;
 
-        switch($edad){
+        switch($cantidad_monedas){
             case 22:
-                echo "Eres mayor de edad";
+                echo "<div class='estilo'>TIENES ACCESO <br> | Montaña Rusa | Calesita | Tren del miedo |</div>";
+                break;
+            case 15:
+                echo "<div class='estilo'>TIENES ACCESO <br> | Calesita | Tren del miedo |</div>";
+                break;
+            case 10:
+                echo "<div class='estilo'>TIENES ACCESO <br> | Tren del miedo |</div>";
                 break;
             default:
-                echo "la edad no es valida";
+                echo "No tienes monedas.";
                 break;
         }
     ?>
