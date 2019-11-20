@@ -38,8 +38,12 @@
         $y = 5;
 
         //< > <= >= == != === !==
+        
         if ($x > $y) {
             echo "X es mayor a Y";
+        }
+        else{
+            echo "Y es mayor a X";
         }
     ?>
 </body>
