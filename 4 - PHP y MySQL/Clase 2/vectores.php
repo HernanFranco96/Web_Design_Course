@@ -67,6 +67,12 @@
 
     echo "<br>Valor total: ".$suma;
     echo "<br>Cantidad de veintes: ".$cant;
+
+    echo "<br><br><br>";
+
+    //Creamos un array con valor de 1 al 10 con range. Minimo y maximo.
+    $x = array(range(1,10));
+    print_r($x);
 ?>
 </body>
 </html>
