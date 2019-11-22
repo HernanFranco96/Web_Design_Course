@@ -25,9 +25,7 @@
 <?php
     if(isset($_POST['enviar']))
     {
-        $operacion = $_POST['operacion'];
-
-        switch($operacion)
+        switch($_POST['operacion'])
         {
             case "suma":
                 echo $_POST['num1'] + $_POST['num2'];
