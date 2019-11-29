@@ -10,7 +10,6 @@
 <section id="page">
     <?php
         include($page.".php");
-        
     ?>
 </section>
 <?php
