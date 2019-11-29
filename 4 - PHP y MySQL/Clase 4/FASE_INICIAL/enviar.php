@@ -48,4 +48,24 @@
         header("location:./index.php?page=contacto&error=C0C001");
     }
 
+    $destinatario = "hernan.franco051096@gmail.com";
+    $asunto = "Contacto Web";
+    $cuerpo = "
+            <h1>Nuevo Correo</h1>
+            Alguien lleno el formulario web<br>
+            <strong>Nombre:</strong>'.$nombre.'<br>
+            <strong>Email:</strong>'.$email.'<br>
+            <strong>Mensaje:</strong>'.$mensaje.'<br>
+            ";
+    $cabecera = "From:" . $email . "\r\n";
+    $cabecera.= "MIME-Version: 1.0\r\n";
+    $cabecera.= "Content-Type: text/html; charset=UTF-8\r\n";
+
+    if(mail($destinatario,$asunto,$cuerpo,$cabecera))
+    {
+        header("location:./index.php?page=contacto&correcto=D0C000");
+    }
+    else{
+        header("location:./index.php?page=contacto&error=D0C001");
+    }
 ?>

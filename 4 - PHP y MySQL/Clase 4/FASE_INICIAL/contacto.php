@@ -11,6 +11,9 @@
 		// Mensaje Correcto Mensaje
 		if($_GET['correcto'] == 'C0C000')
 			echo "MENSAJE CORRECTO";
+		if($_GET['correcto'] == 'D0C000')
+			echo "EMAIL ENVIADO";
+
 	}
 	if(isset($_GET['error']))
 	{
@@ -29,6 +32,9 @@
 		// Mensaje Error Mensaje
 		if($_GET['error'] == 'C0C001')
 			echo "MENSAJE INCORRECTO: No puede superar los 300 caracteres.";
+
+		if($_GET['error'] == 'D0C001')
+			echo "EMAIL NO ENVIADO";
 		
 	}
 	
