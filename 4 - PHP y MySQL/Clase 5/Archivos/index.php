@@ -74,7 +74,7 @@
         use nombre_base_datos;
 
         Creamos la tabla alumnos
-        create table alumnos (dni int(8), nombre varchar(20), correo varchar(40), direccion varchar(40), PRIMARY KEY(dni));
+        create table alumnos (id int auto_increment, dni int(8), nombre varchar(20), correo varchar(40), direccion varchar(40), PRIMARY KEY(id));
 
         Mostramos tabla 
         describe alumnos;
