@@ -6,10 +6,11 @@
         $page = 'inicio';
     }
     include('header.php');
+    include('funciones.php');
 ?>
 <section id="page">
     <?php
-        include($page.".php");
+        mostrarPage($page);
     ?>
 </section>
 <?php

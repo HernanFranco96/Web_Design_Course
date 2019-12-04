@@ -1,4 +1,7 @@
 <?php
+    echo "holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    print "HOLA";
+    /*
     $nombre = $_POST['nombre'];
     strtolower($nombre);
     $email = $_POST['email'];
@@ -6,7 +9,7 @@
     $mensaje = $_POST['mensaje'];
     strtolower($mensaje);
     //Validar el formulario
-
+    validacionForm();
     // Validacion del nombre
   
     if(isset($nombre) && is_string($nombre) && strlen($nombre) >= 3 && ctype_alpha($nombre) == true)
@@ -68,4 +71,6 @@
     else{
         header("location:./index.php?page=contacto&error=D0C001");
     }
+
+    */
 ?>
