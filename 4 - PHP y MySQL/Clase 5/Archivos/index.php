@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lectura y Escritura de archivos</title>
+    <style>
+        div{
+            background-color: red;
+            width: 100px;
+            height: auto;
+            margin: 20px auto;
+            border: 2px solid #000;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 30;
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -26,7 +38,10 @@
     }
 
     //Leemos el archivo
-    echo fread($f, 4000);
+    while(!feof($f)){
+        $linea = "<div>".fgets($f)."<br></div>"; //fgets lee la linea.
+        echo $linea;
+    }
     fclose($f);
 
     // Escribimos el archivo.
@@ -45,7 +60,40 @@
     }
     */
 
+    /*
+        Asi accedemos al servidor. Y nos conectamos a la base de datos.
+        mysql -h localhost -u root -p 
 
+        Nos muestra todas las bases de datos
+        show databases;
+
+        Creamos base de datos
+        create database nombre_base_datos;
+
+        Seleccionamos la BD
+        use nombre_base_datos;
+
+        Creamos la tabla alumnos
+        create table alumnos (dni int(8), nombre varchar(20), correo varchar(40), direccion varchar(40), PRIMARY KEY(dni));
+
+        Mostramos tabla 
+        describe alumnos;
+
+        Muestra el nombre de nuestras tablas
+        show tables;
+
+        Ingresamos datos a nuestra tabla
+        insert into alumnos values (13254687,"Hernan","zaraza@gmail.com","logi 502");
+
+        Mostramos todos los datos de la tabla.
+        select * from alumnos;
+
+        Si queremos buscar un dato en especifico.
+        select * from alumnos where dni = 1231231;
+
+        Cambiamos el nombre donde se encuentre el dni
+        update alumnos set nombre = "Ana" where dni = 13254687
+    */
 
 ?>
 </body>
