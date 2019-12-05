@@ -1,4 +1,7 @@
+<?php
+    validacionForm();
 
+?>
 <div class="main"> 
 	<div class="reservation_top">
 		<div class=" contact_right">

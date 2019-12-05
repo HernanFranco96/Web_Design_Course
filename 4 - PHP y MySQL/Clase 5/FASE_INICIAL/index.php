@@ -10,10 +10,11 @@
 ?>
 <section id="page">
     <?php
-        mostrarPage($page);
+        //mostrarPage($page);
+        include($page.'.php');
     ?>
 </section>
 <?php
     include('footer.php');
-?>
+?>  
 		

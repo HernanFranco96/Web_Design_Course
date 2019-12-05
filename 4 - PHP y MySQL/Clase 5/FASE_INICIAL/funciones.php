@@ -4,11 +4,11 @@
     }
 
     function validacionForm(){
-        echo "hola";
-        /*
+        $mensaje = "";
+        
         // Mensaje Correcto Nombre
         if($_GET['correcto'] == 'A0C000')
-            $mensaje = "NOMBRE CORRECTO"
+            $mensaje = "NOMBRE CORRECTO";
             return $mensaje;
         // Mensaje Correcto Email
         if($_GET['correcto'] == 'B0C000')
@@ -46,6 +46,6 @@
         if($_GET['error'] == 'D0C001')
             $mensaje = "EMAIL NO ENVIADO";
             return $mensaje;
-            */
+            
     }
 ?>
