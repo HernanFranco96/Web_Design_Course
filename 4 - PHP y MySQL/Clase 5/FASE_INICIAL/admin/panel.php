@@ -24,6 +24,7 @@
     <td>IMAGEN</td>
     <td>PRECIO</td>
     <td>STOCK</td>
+    <td>ACCIONES</td>
     </tr>";
 
     foreach($conection->query($sql) as $value) 
@@ -34,9 +35,16 @@
                 <td class="nom"><?php echo $value['nombre'] ?></td>
                 <td class="desc"><?php echo $value['descripcion'] ?></td>
                 <td class="img"><img src="..\images\productos\<?php echo $value['imagen']?>" style="width: 50px;"></td>
-                <td class="pre"><?php echo $value['precio'] ?></td>
+                <td class="pre">$<?php echo $value['precio'] ?></td>
                 <td class="stock"><?php echo $value['stock'] ?></td>
+                <td>MODIFICAR - ELIMINAR </td>
             </tr>
         <?php
     }
+
+    /**
+     * TAREA
+     * AGREGAR UNA COLUMNA MAS PARA ESCRIBIR LA PALABRA MODIFICAR CON URL
+     * Y AGREGAR BOTON PARA ELIMINAR DESDE UNA URL
+     */
 ?>
