@@ -3,17 +3,15 @@
     {
         $page = $_GET['page'];
     }else{
-        $page = 'inicio';
+        $page = 'panel';
     }
+    include('../funciones.php');
     include('header.php');
-    include('funciones.php');
 ?>
 <section id="page">
     <?php
         mostrarPage($page);
     ?>
 </section>
-<?php
-    include('footer.php');
-?>  
+
 		
