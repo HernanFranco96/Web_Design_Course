@@ -1,10 +1,13 @@
 <style>
     h1{
         background-color: #82E0AA;
-        width: 600px;
+        width: 550px;
         margin: 20px auto;
         padding: 5px;
         text-align: center;
+        border-right: 1px solid #000;
+        border-left: 1px solid #000;
+        border-radius: 7px;
     }
 </style>
 

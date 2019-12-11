@@ -55,6 +55,22 @@
             border-radius: 6px;
             margin-right: 2px;
         }
+        .eli{
+            background-color: red;
+            width: 200px;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            margin-right: 2px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        h1{
+            width: 450px;
+            background-color: #EC2121;
+        }
     </style>
 </head>
 <body>
@@ -90,9 +106,16 @@
 
         $stmt = $conection->query($sql); // $conection->prepare($sql);
 
-        echo "<table class='caja' border='1' cellpaging='0'";
-        echo "<tr class='titulo'><td>ID</td><td>NOMBRE</td><td>APELLIDO</td><td>CORREO</td></tr>";
-
+    ?>
+        <table class='caja' border='1' cellpaging='0'>
+        <tr class='titulo'>
+            <td>ID</td>
+            <td>NOMBRE</td>
+            <td>APELLIDO</td>
+            <td>CORREO</td>
+            <td>ACCION</td>
+        </tr>
+    <?php
         while($value = $stmt->fetch(PDO::FETCH_ASSOC)) //Creamos un arreglo. En caso de usar prepare usar foreach
         {
             ?>
@@ -101,10 +124,28 @@
                     <td class="nom"><?php echo $value['nombre'] ?></td>
                     <td class="ape"><?php echo $value['apellido'] ?></td>
                     <td class="co"><?php echo $value['correo'] ?></td>
+                    <td class="eli"><a href="?id=<?php $id = $value['id']?>">ELIMINAR</a></td>
                 </tr>
             <?php
         }
     ?>
+    </table>
+    <?php
 
+         //ELIMINAMOS UN USUARIO
+    if(isset($_GET['id']))
+    {
+        $sql = "DELETE FROM usuarios WHERE id =".$_GET['id']; //Hacemos la consulta para eliminar el usuario
+
+        if($conection->exec($sql)) //Nos permite eliminar, insertar o modificar un dato.
+        {
+            header('location:index.php?mensaje=PRODUCTO ELIMINADO EXITOSAMENTE');
+        }
+    }
+    if(isset($_GET['mensaje']))
+    {
+        echo "<h5>".$_GET['mensaje']."</h5>";
+    }
+    ?>
 </body>
 </html>
