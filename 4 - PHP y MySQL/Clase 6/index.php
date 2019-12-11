@@ -70,6 +70,8 @@
         h1{
             width: 450px;
             background-color: #EC2121;
+            text-align: center;
+            margin: auto;
         }
     </style>
 </head>
@@ -124,7 +126,9 @@
                     <td class="nom"><?php echo $value['nombre'] ?></td>
                     <td class="ape"><?php echo $value['apellido'] ?></td>
                     <td class="co"><?php echo $value['correo'] ?></td>
-                    <td class="eli"><a href="?id=<?php $id = $value['id']?>">ELIMINAR</a></td>
+                    <td class="eli">
+                        <a href="?id=<?php echo $value['id']?>">ELIMINAR</a>
+                    </td>
                 </tr>
             <?php
         }
@@ -132,20 +136,24 @@
     </table>
     <?php
 
-         //ELIMINAMOS UN USUARIO
+    //ELIMINAMOS UN USUARIO
     if(isset($_GET['id']))
     {
-        $sql = "DELETE FROM usuarios WHERE id =".$_GET['id']; //Hacemos la consulta para eliminar el usuario
-
-        if($conection->exec($sql)) //Nos permite eliminar, insertar o modificar un dato.
+        $sql = "DELETE FROM usuarios WHERE id=?"; //El ? equivale a una variable. En caso de que sean varias seria ?,?,?
+        $id = "5";
+        $resultado = $conection->prepare($sql);
+        $resultado->bindValue(1,$id,PDO::PARAM_INT); //Preparamos un parametro para tener mas seguridad.
+ 
+        if($resultado->execute())
         {
-            header('location:index.php?mensaje=PRODUCTO ELIMINADO EXITOSAMENTE');
+            echo "<h5>MENSAJE BORRADO EXITOSAMENTE</h5>";
+        }
+        else
+        {
+            echo "no se borro";
         }
     }
-    if(isset($_GET['mensaje']))
-    {
-        echo "<h5>".$_GET['mensaje']."</h5>";
-    }
+
     ?>
 </body>
 </html>

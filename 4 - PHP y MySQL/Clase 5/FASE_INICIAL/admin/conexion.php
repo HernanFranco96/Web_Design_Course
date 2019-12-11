@@ -1,13 +1,13 @@
 <style>
     h1{
         background-color: #82E0AA;
-        width: 550px;
-        margin: 20px auto;
+        width: 100px;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-left: 2px;
         padding: 5px;
         text-align: center;
-        border-right: 1px solid #000;
-        border-left: 1px solid #000;
-        border-radius: 7px;
+        border-radius: 3px;
     }
 </style>
 
@@ -21,7 +21,7 @@
         try
         {
             $conection = new PDO("mysql:host=$host; dbname=$db", $user, $pass);
-            echo "<h1>Conectado a la base de datos</h1>";    
+            echo "<h1>Conectado</h1>";    
         }
         catch(PDOException $e)
         {

@@ -22,6 +22,7 @@
         font-size: 20px;
         margin: auto;
         margin-top: 15px;
+        margin-bottom: 20px;
         padding: 20px;
         color: #fff;
     }
@@ -68,15 +69,15 @@
      //ELIMINAMOS UN USUARIO
     if(isset($_GET['id']))
     {
-        $sql = "DELETE FROM productos WHERE id =".$_GET['id']; //Hacemos la consulta para eliminar el usuario
-
-        if($conection->exec($sql)) //Nos permite eliminar, insertar o modificar un dato.
+        $id = $_GET['id'];
+        if(borrar($conection,$id))
         {
-            header('location:index.php?mensaje=PRODUCTO ELIMINADO EXITOSAMENTE');
+            echo "<h5>PRODUCTO ELIMINADO EXITOSAMENTE</h5>";
         }
-    }
-    if(isset($_GET['mensaje']))
-    {
-        echo "<h5>".$_GET['mensaje']."</h5>";
+        else
+        {
+            echo "<h5>NO SE PUDO ELIMINAR</h5>";
+        }
+
     }
 ?>

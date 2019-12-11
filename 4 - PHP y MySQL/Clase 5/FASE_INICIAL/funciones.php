@@ -91,4 +91,17 @@
 
         return $mensaje;
     }
+
+    function borrar($conection,$id)
+    {
+        $sql = "DELETE FROM productos WHERE id=?"; //Hacemos la consulta para eliminar el usuario
+        $resultado = $conection->prepare($sql);
+        $resultado->bindParam(1,$id,PDO::PARAM_INT);
+
+        if($resultado->execute()) //Nos permite eliminar, insertar o modificar un dato.
+        {
+           return true;
+        }
+        return false;
+    }
 ?>
