@@ -29,9 +29,10 @@
 </style>
 <?php
     include("conexion.php");
-
-    ?>
-
+?>
+    <br><br>
+        <a href="index.php?page=productosAdmin">Crear nuevo Producto</a>
+    <br><br>
     <table class='caja' cellpaging='0'>
         <tr class='titulo'>
             <th>ID</th>
@@ -45,7 +46,6 @@
     <?php
 
     $sql = "SELECT id, nombre, descripcion, imagen, precio, stock FROM productos";
-
     $conection->prepare($sql); 
     foreach($conection->query($sql) as $value) 
     {

@@ -104,4 +104,77 @@
         }
         return false;
     }
+
+    function insertarProducto($conection,$nombre,$descripcion,$precio,$stock)
+    {
+        $sql = "INSERT INTO productos (nombre,descripcion,precio,stock) VALUES (?,?,?,?)";
+        $resultado = $conection->prepare($sql);
+
+        if(validarProducto($nombre,$descripcion,$precio,$stock) == -1)
+        {
+            echo "El nombre ingresado no es valido ";
+            return false;
+        }
+        elseif(validarProducto($nombre,$descripcion,$precio,$stock) == -2)
+        {
+            echo "La descripcion ingresada no es valido ";
+            return false;
+        }
+        elseif(validarProducto($nombre,$descripcion,$precio,$stock) == -3)
+        {
+            echo "El precio ingresado no es valido ";
+            return false;
+        }
+        elseif(validarProducto($nombre,$descripcion,$precio,$stock) == -4)
+        {
+            echo "El stock ingresado no es valido "; 
+            return false;
+        }
+
+        $resultado->bindParam(1,$nombre,PDO::PARAM_STR,30);
+        $resultado->bindParam(2,$descripcion,PDO::PARAM_STR,100);
+        $resultado->bindParam(3,$precio,PDO::PARAM_STR,10.3);
+        $resultado->bindParam(4,$stock,PDO::PARAM_INT,11);
+
+        if($resultado->execute())
+            return true;
+
+        return false;
+    }
+
+    function validarProducto($nombre,$descripcion,$precio,$stock)
+    {
+        $resp = ""; $index;
+        $precioFloat = floatval($precio);
+        $stockInt = intval($stock);
+
+        if(!is_string($nombre) || ctype_digit($nombre) || ctype_alnum($nombre) && strlen($nombre) < 3)
+            $resp = "A00000";
+        elseif(!is_string($descripcion) || ctype_digit($descripcion) && strlen($descripcion) < 3)
+            $resp = "B00000";
+        elseif(ctype_alnum($precio) || !is_float($precioFloat) && $precioFloat <= 0)
+            $resp = "C00000";
+        elseif(!ctype_digit($stock) || !is_int($stockInt) || ($stockInt <= 0 && $stockInt > 1000))
+            $resp = "D00000";
+
+        switch($resp)
+        {
+            case 'A00000':
+                $index = -1;
+                break;
+            case 'B00000':
+                $index = -2;
+                break;
+            case 'C00000':
+                $index = -3;
+                break;
+            case 'D00000':
+                $index = -4;
+                break;
+            default:
+                $index = 1;
+        }
+
+        return $index;
+    }
 ?>

@@ -12,7 +12,6 @@
 </style>
 
 <?php
-
         $host = "localhost";
         $db = "comerciopractica";
         $user = "root";
@@ -27,6 +26,4 @@
         {
             echo "<h1>Error no puedo conectarme con la base de datos: ".$e->getMessage()."</h1";
         }
-
-
 ?>
