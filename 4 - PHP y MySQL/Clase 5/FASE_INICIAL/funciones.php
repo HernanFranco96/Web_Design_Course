@@ -105,36 +105,36 @@
         return false;
     }
 
-    function insertarProducto($conection,$nombre,$descripcion,$precio,$stock)
+    function insertarProducto($conection,$nombre,$descripcion,$imagen,$precio,$stock)
     {
-        $sql = "INSERT INTO productos (nombre,descripcion,precio,stock) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO productos (nombre,descripcion,imagen,precio,stock) VALUES (?,?,?,?,?)";
         $resultado = $conection->prepare($sql);
 
         if(validarProducto($nombre,$descripcion,$precio,$stock) == -1)
         {
-            echo "El nombre ingresado no es valido ";
+            echo "<h3>El nombre ingresado no es valido.</h3>";
             return false;
         }
         elseif(validarProducto($nombre,$descripcion,$precio,$stock) == -2)
         {
-            echo "La descripcion ingresada no es valido ";
+            echo "<h3>La descripcion ingresada no es valido.</h3>";
             return false;
         }
         elseif(validarProducto($nombre,$descripcion,$precio,$stock) == -3)
         {
-            echo "El precio ingresado no es valido ";
+            echo "<h3>El precio ingresado no es valido.</h3>";
             return false;
         }
         elseif(validarProducto($nombre,$descripcion,$precio,$stock) == -4)
         {
-            echo "El stock ingresado no es valido "; 
+            echo "<h3>El stock ingresado no es valido.</h3>"; 
             return false;
         }
-
         $resultado->bindParam(1,$nombre,PDO::PARAM_STR,30);
         $resultado->bindParam(2,$descripcion,PDO::PARAM_STR,100);
-        $resultado->bindParam(3,$precio,PDO::PARAM_STR,10.3);
-        $resultado->bindParam(4,$stock,PDO::PARAM_INT,11);
+        $resultado->bindParam(3,$imagen,PDO::PARAM_STR,50);
+        $resultado->bindParam(4,$precio,PDO::PARAM_STR,10.3);
+        $resultado->bindParam(5,$stock,PDO::PARAM_INT,11);
 
         if($resultado->execute())
             return true;

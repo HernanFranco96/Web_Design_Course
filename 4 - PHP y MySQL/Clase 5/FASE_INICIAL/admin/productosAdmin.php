@@ -9,14 +9,17 @@
 		$descripcion = $_POST['descripcion'];
 		$precio = $_POST['precio'];
 		$stock = $_POST['stock'];
+		
+        move_uploaded_file($_FILES["imagen"]["tmp_name"],"../images/productos/".$_FILES["imagen"]["name"]);
+		$img = $_FILES["imagen"]["name"];
 
-		if(insertarProducto($conection,$nombre,$descripcion,$precio,$stock))
+		if(insertarProducto($conection,$nombre,$descripcion,$img,$precio,$stock))
 		{
-			echo "Producto insertado";
+			echo "<h3>Producto insertado.</h3>";
 		}			
 		else
 		{
-			echo "<br>No se inserto el producto";
+			echo "<br><h3>No se inserto el producto.<h3>";
 		}
 	}
 	else{
