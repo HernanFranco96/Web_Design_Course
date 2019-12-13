@@ -11,7 +11,7 @@
 		$stock = $_POST['stock'];
 		
         move_uploaded_file($_FILES["imagen"]["tmp_name"],"../images/productos/".$_FILES["imagen"]["name"]);
-		$img = $_FILES["imagen"]["name"];
+		$img = $_FILES["imagen"]["name"]; // Obtenemos el nombre de la imagen.
 
 		if(insertarProducto($conection,$nombre,$descripcion,$img,$precio,$stock))
 		{
