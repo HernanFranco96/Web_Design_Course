@@ -177,4 +177,66 @@
 
         return $index;
     }
+
+    function guardarUsuario($conection,$nombre, $apellido, $email, $clave)
+    {
+        $sql = "INSERT INTO usuarios (nombre,apellido,email,clave) VALUES (?,?,?,?)";
+        $resultado = $conection->prepare($sql);
+
+        if(validarUsuario($nombre,$apellido,$email) == -1)
+        {
+            echo "<h3>El nombre ingresado no es valido.</h3>";
+            return false;
+        }
+        if(validarUsuario($nombre,$apellido,$email) == -2)
+        {
+            echo "<h3>El apellido ingresado no es valido.</h3>";
+            return false;
+        }
+        if(validarUsuario($nombre,$apellido,$email) == -3)
+        {
+            echo "<h3>El email ingresado no es valido.</h3>";
+            return false;
+        }
+
+        $resultado->bindParam(1,$nombre,PDO::PARAM_STR,30);
+        $resultado->bindParam(2,$apellido,PDO::PARAM_STR,30);
+        $resultado->bindParam(3,$email,PDO::PARAM_STR,40);
+        $resultado->bindParam(4,$clave,PDO::PARAM_STR,40);
+
+        if($resultado->execute())
+            return true;
+
+        return false;
+    }
+
+    function validarUsuario($nombre,$apellido,$email)
+    {
+        $resp = "";
+        $index = 0;
+
+        if(!is_string($nombre) || ctype_digit($nombre) || ctype_alnum($nombre) && strlen($nombre) < 3)
+            $resp = "A00000";
+        if(!is_string($apellido) || ctype_digit($apellido) || ctype_alnum($apellido) && strlen($apellido) < 3)
+            $resp = "B00000";
+        if(!is_string($email) || ctype_digit($email) || !ctype_alnum($email) && strlen($email) < 8)
+            $resp = "C00000";
+
+        switch($resp)
+        {
+            case 'A00000':
+                $index = -1;
+                break;
+            case 'B00000':
+                $index = -2;
+                break;
+            case 'C00000':
+                $index = -3;
+                break;
+            default:
+                $index = 1;
+        }
+
+        return $index;
+    }   
 ?>
