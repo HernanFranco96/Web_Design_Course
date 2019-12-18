@@ -269,8 +269,8 @@
 
             if(password_verify($pass,$user['clave']))
             {
-                session_start();
-                $_SESSION['Usuario'] = $user['nombre'];
+                session_start(); 
+                $_SESSION['Usuario'] = $user['nombre']; //Creamos una variable super global y le asignamos el nombre
                 return "A00000";
             }
             else
