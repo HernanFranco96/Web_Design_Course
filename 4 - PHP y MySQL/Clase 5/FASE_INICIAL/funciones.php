@@ -257,4 +257,30 @@
 
         return false;
     }
+
+    function iniciarSesion($conection, $email, $pass)
+    {
+        $user = $conection->prepare("SELECT * FROM usuarios WHERE email = ?");
+        $user->bindParam(1,$email,PDO::PARAM_STR);
+
+        if($user->execute() && $user->rowCount() > 0)
+        {
+            $user = $user->fetch();
+
+            if(password_verify($pass,$user['clave']))
+            {
+                session_start();
+                $_SESSION['Usuario'] = $user['nombre'];
+                return "A00000";
+            }
+            else
+            {
+                return "A00001";
+            }
+        }
+        else
+        {
+            return "A00002";
+        }
+    }
 ?>

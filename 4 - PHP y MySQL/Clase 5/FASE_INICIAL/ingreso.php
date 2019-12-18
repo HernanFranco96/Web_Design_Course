@@ -6,18 +6,12 @@
 		$email = $_POST['email'];
 		$clave = $_POST['pass'];
 
-		$sql = "SELECT * FROM usuarios WHERE email = ".$email;
-		foreach($conection->query($sql) as $value)
-		{
-			if($clave == $value['clave'])
-			{
-				
-			}
-		}
-	}
-	else
-	{
-
+		if(iniciarSesion($conection,$email,$clave) == "A00000")
+			echo "<h4>Bienvenido: ". $email."</h4>";
+		elseif(iniciarSesion($conection,$email,$clave) == "A00001")
+			echo "<h4>La contraseña ingresada no es correcta.</h4>";
+		elseif(iniciarSesion($conection,$email,$clave) == "A00002")
+			echo "<h4>El usuario no existe.</h4>";
 	}
 ?>		
 <div class="account_grid">
