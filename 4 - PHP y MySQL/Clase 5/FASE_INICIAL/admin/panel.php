@@ -26,12 +26,19 @@
         padding: 20px;
         color: #fff;
     }
+    .nuevoProducto{
+        background-color: #5DADE2;
+        width: 100px;
+        padding: 15px;
+        border-radius: 3px;
+        font-size: 15px;
+    }
 </style>
 <?php
     include("conexion.php");
 ?>
     <br><br>
-        <a href="index.php?page=productosAdmin&action=add">Crear nuevo Producto</a>
+        <a class="nuevoProducto" href="index.php?page=productosAdmin&action=add">Crear nuevo Producto</a>
     <br><br>
     <table class='caja' cellpaging='0'>
         <tr class='titulo'>
@@ -59,7 +66,7 @@
                 <td><?php echo $value['stock'] ?></td>
                 <td>
                     <a href="?id=<?php echo $value['id']?>">ELIMINAR</a>
-                    <a href="?page=productosAdmin&action=update&id<?php echo $value['id'];?>">MODIFICAR</a>
+                    <a href="?page=productosAdmin&action=update&id=<?php echo $value['id'];?>">MODIFICAR</a>
                 </td>
             </tr>
         <?php

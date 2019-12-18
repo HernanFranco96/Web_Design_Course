@@ -49,32 +49,24 @@
 	}
 	if($_GET['action'] == 'update')
 	{
-		$sql = "SELECT * FROM productos WHERE id=?";
-		
-		if(isset($_POST['enviar'])){
-			$nombre = $_POST['nombre'];
-			$descripcion = $_POST['descripcion'];
-			$precio = $_POST['precio'];
-			$stock = $_POST['stock'];
+		$sql = "SELECT * FROM productos WHERE id=".$_GET['id'];
+		$conection->prepare($sql);
+		$id = $_GET['id'];
 
-			move_uploaded_file($_FILES["imagen"]["tmp_name"],"../images/productos/".$_FILES["imagen"]["name"]);
-			$img = $_FILES["imagen"]["name"]; // Obtenemos el nombre de la imagen.
-		}
-		else
-		{
-			echo "<h3>Actualizando Producto</h3>";
-		}
+		foreach($conection->query($sql) as $value){
 ?>
 	<form action="#" method="post" enctype="multipart/form-data">
 		<div class="mation">
+			<span>ID: <label>*</label></span>
+			<input type="text" name="id" value="<?php echo $value['id'];?>">
 			<span>Nombre: <label>*</label></span>
-			<input type="text" name="nombre"> 
+			<input type="text" name="nombre" value="<?php echo $value['nombre'];?>"> 
 			<span>Descripción: <label>*</label></span>
-			<input type="text" name="descripcion"> 
+			<input type="text" name="descripcion" value="<?php echo $value['descripcion'];?>"> 
 			<span>Precio: <label>*</label></span>
-			<input type="text" name="precio"> 
+			<input type="text" name="precio" value="<?php echo $value['precio'];?>"> 
 			<span>Stock: <label>*</label></span>
-			<input type="text" name="stock"> 
+			<input type="text" name="stock" value="<?php echo $value['stock'];?>"> 
 			<span>Imagen: <label>*</label></span>
 			<input type="file" name="imagen"> 
 			<div class="register-but">
@@ -83,6 +75,27 @@
 		</div>
 	</form>
 <?php
+		}
+
+		if(isset($_POST['enviar']))
+		{
+			$nombreNuevo = $_POST['nombre'];
+			$descripcionNueva = $_POST['descripcion'];
+			$precioNuevo = $_POST['precio'];
+			$stockNuevo = $_POST['stock'];
+
+			move_uploaded_file($_FILES["imagen"]["tmp_name"],"../images/productos/".$_FILES["imagen"]["name"]);
+			$img = $_FILES["imagen"]["name"]; // Obtenemos el nombre de la imagen.
+
+			if(actualizarProducto($conection,$id,$nombreNuevo,$descripcionNueva,$precioNuevo,$stockNuevo,$img))
+			{
+				echo "<h3>Producto actualizado.</h3>";
+			}
+			else
+			{
+				echo "<h3>No se pudo actualizar el producto.</h3>";
+			}
+		}
 	}
 ?>
 	

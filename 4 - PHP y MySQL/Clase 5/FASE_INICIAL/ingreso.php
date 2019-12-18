@@ -1,6 +1,26 @@
+<?php
+	include('admin/conexion.php');
 
-		
-				<div class="account_grid">
+	if(isset($_POST['enviar']))
+	{
+		$email = $_POST['email'];
+		$clave = $_POST['pass'];
+
+		$sql = "SELECT * FROM usuarios WHERE email = ".$email;
+		foreach($conection->query($sql) as $value)
+		{
+			if($clave == $value['clave'])
+			{
+				
+			}
+		}
+	}
+	else
+	{
+
+	}
+?>		
+<div class="account_grid">
 	<div class="login-right">
 		<h3>INGRESO DE USUARIO</h3>
 		<form action="#" method="post">
@@ -12,7 +32,7 @@
 			<span>Contraseña:</span>
 			<input type="password" name="pass"> 
 		</div>
-			<input type="submit" value="Ingresar">
+			<input type="submit" value="Ingresar" name="enviar">
 			<br>
 			<a class="forgot" href="#">¿Olvidaste tu contraseña?</a>
 		</form>

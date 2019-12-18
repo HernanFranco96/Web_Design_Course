@@ -240,5 +240,21 @@
         return $index;
     }   
 
-    
+    function actualizarProducto($conection,$id,$nombreNuevo,$descripcionNueva,$precioNuevo,$stockNuevo,$imagen)
+    {
+        $sql = "UPDATE productos SET nombre = ?, descripcion = ?, imagen = ?, precio = ?, stock = ? WHERE id = ?";
+        $resultado = $conection->prepare($sql);
+
+        $resultado->bindParam(1,$nombreNuevo,PDO::PARAM_STR,30);
+        $resultado->bindParam(2,$descripcionNueva,PDO::PARAM_STR,100);
+        $resultado->bindParam(3,$imagen,PDO::PARAM_STR,50);
+        $resultado->bindParam(4,$precioNuevo,PDO::PARAM_STR,10.3);
+        $resultado->bindParam(5,$stockNuevo,PDO::PARAM_INT,11);
+        $resultado->bindParam(6,$id,PDO::PARAM_INT,11);
+
+        if($resultado->execute())
+            return true;
+
+        return false;
+    }
 ?>
