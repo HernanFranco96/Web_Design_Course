@@ -31,7 +31,7 @@
     include("conexion.php");
 ?>
     <br><br>
-        <a href="index.php?page=productosAdmin">Crear nuevo Producto</a>
+        <a href="index.php?page=productosAdmin&action=add">Crear nuevo Producto</a>
     <br><br>
     <table class='caja' cellpaging='0'>
         <tr class='titulo'>
@@ -59,6 +59,7 @@
                 <td><?php echo $value['stock'] ?></td>
                 <td>
                     <a href="?id=<?php echo $value['id']?>">ELIMINAR</a>
+                    <a href="?page=productosAdmin&action=update&id<?php echo $value['id'];?>">MODIFICAR</a>
                 </td>
             </tr>
         <?php
