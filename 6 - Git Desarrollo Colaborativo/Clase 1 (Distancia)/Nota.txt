@@ -1,0 +1,28 @@
+Rama o branch: Un branch es Git es simplemente un apuntador movil (o variable) apuntando a un commit. La rama por defecto de Git es la rama master. Con la primera confirmacion de cambios que realicemos, se creara esta rama principal apuntando a commit. En cada confirmacion de cambios que realicemos, la rama ira avanzando automaticamente. Y la rama master apuntara siempre a la ultima confirmacion realizada.
+
+Control + L: Limpia pantalla.
+
+git config: Nos muestra informacion de configuracion.
+
+git config --global user.name "usuario": Configura tu nombre de usuario.
+
+git config --global user.email "email": Configura tu email del usuario.
+
+git config --list: Muestra los datos del usuario registrado.
+
+dir: Nos muestra los archivos de la carpeta.
+
+git init: Nos permite iniciar el repositorio.
+
+git add "archivo" / .: Selecciona un archivo o todos.
+
+git status: Muestra los archivos que estan o no estan incluidos al git.
+
+git rm --cached "nombre del archivo": Vuelve atras y no es agregado a git el archivo.
+
+git commit: Es el registro. Cada ves que suba mis archivos a mi repositorio. Subira una vitacora, un registro.
+Se apreta I para escribir el registro de la vitacora. Luego escriben wq y enter para guardar cambios.
+
+git log: Me muestra todos los commit.
+
+rm "archivo": Elimina el archivo.
