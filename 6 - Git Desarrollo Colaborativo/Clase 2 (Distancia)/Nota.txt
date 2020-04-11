@@ -1,0 +1,8 @@
+checkout: Te permite saltar de una rama a otra.
+branch: Creamos una rama.
+show: Es una etiqueta.
+stash: Guarda momentaneamente.
+stash list: Muetra lo guardado
+stash apply: Aplica lo guardado
+stash drop: Elimina el ultimo stash guardado.
+stash branch: Crea una nueva rama, asocia todos los commit con la rama.
