@@ -1,0 +1,23 @@
+body{
+    background-color: #f4dec8;
+    color: #33302a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+header{
+    background-color: #33302a;
+    height: 140px;
+}
+nav{
+    background-color: #706946;
+    height: 60px;
+}
+main{
+    min-height: 250px;
+    width: 1024px;
+    margin: auto;
+}
+footer{
+    background-color: #33302a;
+    height: 150px;
+}
