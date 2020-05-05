@@ -1,0 +1,29 @@
+body{
+    background-color: mediumaquamarine;
+}
+
+#rojo, #magenta, #naranja{
+    height: 100px;
+    width: 250px;
+    float: left;
+    margin-right: 20px;
+}
+
+#rojo{
+    background-color: red;
+}
+
+#magenta{
+    background-color: magenta;
+}
+
+#naranja{
+    background-color: #d60;
+}
+
+#gris{
+    height: 60px;
+    width: 800px;
+    background-color: grey;
+    clear: both;
+}
