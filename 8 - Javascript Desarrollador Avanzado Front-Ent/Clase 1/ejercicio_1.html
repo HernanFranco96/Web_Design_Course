@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+    <style>
+        .azul
+        {
+            background-color: cyan;
+            color: purple;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="titulo">Titulo de la pagina</h1>
+
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+    </ul>
+
+    <script>
+        var titulo = document.querySelector("h1");
+        titulo.innerHTML = `<i>Titulo creado por <a href="#">JS</a></i>`;
+
+        titulo.classList.add('azul');
+        //titulo.classList.remove('azul');
+
+        titulo.id = 'titulo';
+
+        var items = document.querySelectorAll('li');
+        var colores = ['red','green','blue','magenta','yellow'];
+
+        for(var i=0;i<items.length;i++)
+        {
+            items[i].innerHTML = `Elemento Nro. <b>${i+1}</b>`;
+            items[i].style.color = colores[i];
+        }
+
+        var parrafo = document.createElement('p');
+        parrafo.innerText = "Hola soy un parrafo";
+        parrafo.style.backgroundColor = 'black';
+        parrafo.style.color = 'yellow';
+        parrafo.id = 'parrafo';
+        parrafo.classList.add('txt');
+
+        document.body.appendChild(parrafo);
+    </script>
+</body>
+</html>
