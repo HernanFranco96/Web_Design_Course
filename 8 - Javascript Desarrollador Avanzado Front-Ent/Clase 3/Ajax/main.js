@@ -53,17 +53,46 @@ console.log('Otras tareas...')
 
 let xhr = new XMLHttpRequest()
 console.log(xhr.readyState) //Es una variable que nos va a indicar en que estado esta respuesta
-
+/*
 xhr.addEventListener('readystatechange', () => { //Obtenemos el estado de la respuesta
 	console.log('readystatechange: ', xhr.readyState)
 
+	if(xhr.readyState == 2){
+		let headers = xhr.getAllResponseHeaders() //Obtenemos todos los headers
+		//console.log(headers)
+		let tipo = xhr.getResponseHeader('content-type') //Obtenemos un unico header
+		console.log(tipo)
+
+		//if(tipo != 'text/plain') Da error porque me llega un recurso text/plain
+		if(!tipo.includes('text/plain')) // Sino incluye text/plain aborta
+		{
+			xhr.abort()
+		}
+	}
+
 	if(xhr.readyState == 4){
-		console.log('respuesta: ', xhr.response)
+		if(xhr.status == 200){
+			console.log('Respuesta: ', xhr.response)
+		}else{
+			console.log('Error status: ', xhr.status)
+		}
+	}
+})
+*/
+xhr.addEventListener('load', () => {
+	if(xhr.status == 200){
+		console.log('Respuesta: ', xhr.response)
+	}else{
+		console.error("Error! status: ", xhr.status)
 	}
 })
 
-xhr.open('get','texto.txt') // Configura la instancia
+xhr.addEventListener('timeout', () => {
+	console.log('El pedido se ha excedido de tiempo')
+})
 
+xhr.open('get','texto.txt') // Configura la instancia
+xhr.timeout = 0
 xhr.send() // Enviamos la peticion
 /*
 console.log(xhr.readyState)
@@ -75,8 +104,14 @@ setTimeout( () =>{
 }, 100)
 */
 
+// readyState
 // 0 Instancia creada
-// 1 Instancia configurada. Sabe con que metodo va a trabajar y que recurso
-// 2 Proceso de intercambio entre cliente y servidor
-// 3 Proceso de transferencia de informacion
+// 1 Instancia esta configurada
+// 2 Intercambio de header entre cliente y servidor
+// 3 Transferencia de informacion
 // 4 Termino la transferencia ya sea por bien o por mal
+
+// state
+// 200 -> Transferencia correcta
+// Otros -> error
+
