@@ -3,6 +3,11 @@
     require 'funciones.php';
     require 'Persona.php';
     $Persona = new Persona;
+
+    //NO SE DEBE HACER, DEJAMOS LOS ATRIBUTOS SIN DEFENSA.
+    //$Persona->nombre = 'Hernan';
+    //$Persona->apellido = 'Franco';
+    
     mostrar($Persona)
 ?>
 <!DOCTYPE html>
@@ -17,8 +22,6 @@
     <h1>Vista Persona</h1>
 
 <?php
-    $Persona->nombre = 'Hernan';
-    $Persona->apellido = 'Franco';
     echo $Persona->verDatos();
 ?>
 </body>
