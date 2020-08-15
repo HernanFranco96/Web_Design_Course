@@ -1,9 +1,21 @@
 <?php
-    class Persona
+    class Persona2
     {
         // Atributos
         private $nombre;
         private $apellido;
+
+        #######################
+        ##### CONSTRUCTOR #####
+        #######################
+        
+        
+        public function __construct($n,$a)
+        {
+            $this->setNombre($n);
+            $this->setApellido($a);
+        }
+
 
         // Metodos
         function verDatos()

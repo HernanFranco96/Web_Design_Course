@@ -1,17 +1,9 @@
 <?php
     // Verificar Fire Cool
     require 'funciones.php';
-    require 'Persona.php';
-    $Persona = new Persona;
+    require 'Persona2.php';
+    $Persona2 = new Persona2("Hernan","Franco");
 
-    $Persona->setNombre("Hernan");
-    $Persona->setApellido("Franco");
-
-    //NO SE DEBE HACER, DEJAMOS LOS ATRIBUTOS SIN DEFENSA.
-    //$Persona->nombre = 'Hernan';
-    //$Persona->apellido = 'Franco';
-    
-    mostrar($Persona)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +17,7 @@
     <h1>Vista Persona</h1>
 
 <?php
-    echo $Persona->verDatos();
+    echo $Persona2->verDatos();
 ?>
 </body>
 </html>
