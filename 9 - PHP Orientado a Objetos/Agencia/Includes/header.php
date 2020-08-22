@@ -23,8 +23,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#">Inicio</a>
-                    <a class="nav-item nav-link" href="#">Regiones</a>
-                    <a class="nav-item nav-link" href="#">Destinos</a>
+                    <a class="nav-item nav-link" href="adminRegiones.php">Regiones</a>
+                    <a class="nav-item nav-link" href="adminDestinos.php">Destinos</a>
                 </div>
             </div>
         </nav>
