@@ -22,7 +22,7 @@
                     <th>Asientos</th>
                     <th>Disponibles</th>
                     <th colspan="2">
-                        <a href="" class="btn btn-dark">
+                        <a href="fromAgregarDestino.php" class="btn btn-dark">
                             Agregar
                         </a>
                     </th>
@@ -36,7 +36,7 @@
                  <tr>
                     <td><?php echo $destino['destID']; ?></td>
                     <td><?php echo $destino['destNombre']; ?></td>
-                    <td><?php echo $destino['regID']; ?></td>
+                    <td><?php echo $destino['regNombre']; ?></td>
                     <td><?php echo $destino['destPrecio']; ?></td>
                     <td><?php echo $destino['destAsientos']; ?></td>
                     <td><?php echo $destino['destDisponibles']; ?></td>

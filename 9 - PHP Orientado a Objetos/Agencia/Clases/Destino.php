@@ -14,14 +14,15 @@
         {
             $link = Conexion::conectar();
 
-            $sql = "SELECT destID, destNombre, regID, destPrecio, destAsientos, destDisponibles, destActivo
-                        FROM destinos";
+            $sql = "SELECT destID, destNombre, d.regID, r.regNombre, destPrecio, destAsientos, destDisponibles, destActivo
+                        FROM destinos d, regiones r
+                        WHERE d.regID = r.regID";
 
             $stmt = $link->prepare($sql);
             $stmt->execute();
 
-            $regiones = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $regiones;
+            $Destinos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $Destinos;
         }
 
        
