@@ -7,16 +7,36 @@
 
         public function listarRegiones()
         {
-            $link = Conexion::conectar();
+                $link = Conexion::conectar();
 
-            $sql = "SELECT regID, regNombre
+                $sql = "SELECT regID, regNombre
                         FROM regiones";
 
-            $stmt = $link->prepare($sql);
-            $stmt->execute();
+                $stmt = $link->prepare($sql);
+                $stmt->execute();
 
-            $regiones = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $regiones;
+                $regiones = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $regiones;
+        }
+
+        public function verRegionPorID()
+        {
+                $link = Conexion::conectar();
+                $regID = $_GET['regID'];
+
+                $sql = "SELECT regID, regNombre
+                        FROM regiones
+                        WHERE regID = ".$regID;
+
+                $stmt = $link->prepare($sql);
+                $stmt->execute();
+
+                $datosRegion = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                $this->setRegID($datosRegion['regID']);
+                $this->setRegNombre($datosRegion['regNombre']);
+
+                return $stmt;
         }
 
         public function getRegID()
