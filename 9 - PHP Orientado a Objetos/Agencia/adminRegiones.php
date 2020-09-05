@@ -1,7 +1,5 @@
 <?php
-    require 'Clases/Conexion.php';
-    require 'Clases/Region.php';
-
+    require 'config/config.php';
     $Region = new Region();
     $Regiones = $Region->listarRegiones();
 

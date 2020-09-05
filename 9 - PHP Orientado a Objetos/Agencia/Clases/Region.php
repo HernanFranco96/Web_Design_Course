@@ -64,6 +64,28 @@
                 return false;
         }       
 
+        public function agregarRegion()
+        {
+            $regNombre = $_POST['regNombre'];
+            $link = Conexion::conectar();
+
+            $sql = "INSERT INTO regiones
+                            ( regNombre ) 
+                        VALUES
+                            ( :regNombre )";
+
+            $stmt = $link->prepare($sql);
+            $stmt->bindParam(':regNombre', $regNombre, PDO::PARAM_STR);
+
+            if( $stmt->execute() ){
+                // registramos atributos en el objeto
+                $this->setRegNombre($regNombre);
+                $this->setRegID( $link->lastInsertId() );
+                return true;
+            }
+            return false;
+        }
+
         public function getRegID()
         {
                 return $this->regID;

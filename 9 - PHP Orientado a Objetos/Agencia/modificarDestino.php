@@ -1,7 +1,7 @@
 <?php
     require 'config/config.php';
-    $Region = new Region;
-    $chequeo = $Region->modificarRegion();
+    $Destino = new Region;
+    $chequeo = $Destino->modificarRegion();
 
     $css = 'danger';
     $mensaje = 'No se ha modificado datos de la region.';
@@ -29,4 +29,3 @@
 <?php
     include 'includes/footer.php';
 ?>
-
