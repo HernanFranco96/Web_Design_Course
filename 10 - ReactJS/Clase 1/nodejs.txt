@@ -1,0 +1,18 @@
+Sirve para ejecutar JS fuera del browser
+
+node --version: Nos muestra la version
+
+npm: Herramienta que permite bajar librerias
+CLI: linea de comando
+
+npm install -g create-react-app: Instamos una libreria para instalar react
+
+-g: Nivel global
+
+create-react-app --version: Version de react
+
+create-react-app: Descarga y aplica un proyecto de react
+
+npm start: Inicia el proyecto
+
+Al crear un componente en react. Se puede llamar como una etiqueta.
