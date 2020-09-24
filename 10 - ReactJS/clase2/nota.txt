@@ -1,0 +1,5 @@
+agregamos bootstrap al proyecto escribiendo   "bootstrap": "4.5.2" en package.json
+
+npm install -> instala las dependencias
+
+map => es el for utilizado en react
