@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------
+Nociones de red
+---------------------------------------------------------------------------------
+
+Stack de protocolos. La red que vamos analizar es TCP/IP
+Existen varios tipos de redes.
+
+1) Conmutación por circuitos. 	Manual años 30,40 centrales telefonicas.
+2) Conmutación por timeslot		un pedacito de tiempo para cada comunicación
+3) Conmutación por paquete		Internet
+
+Redes de broadcast que son los cableoperadores/ canales de television 
+1 emite 1000000000000000 escuchan
+
+Capa1: Capa fisica
+Capa2: Capa de enlace
+Capa3: (IP) Capa de los routes, se abarata porque un paquete puede tomar diferentes rutas
+Capa4: TCP hay una session abierta desde un usuario A a un usuario B.
+Capa5: HTTP
+
+HTTP GET / 1.1
+HOST: 192.168.0.22
+
+Codificaciones: Por red, solo pasan datos binarios. Los protocolos son binarios. Ahora bien. HTTP cambia, no es binario, sino que es ASCII, UTF-8. Es un protocolo basado en texto.
+
+Si quiero enviar un pago de 1537.20 Cuantos bytes necesito? 
+- Depende de como lo quiera enviar.
+
+1 Byte son 8 bits...  
+Entonces son 7 Bytos por cada cararacter.
+
+Encoding ASCII, IBM (Muchos), UTF8 Tiene una cantidad importante de caracteres, pero la ventaja principal es que su ancho es variable.
+
+La red IP se caracteriza por tener direcciones de routers o de hosts y un numero final que es el puerto, el puerto es un numero de aplicacion.
+
+- 80 Tipicamente es HTTP
+- 8080 es HTTP
+-3000 es nodejs servicio http
+-------------------------------------------------------------------------------------
+Un array asociativo, y lo va a transformar en formato json
+y lo van a parsear con https://jsonlint.com/
+
+
+API REST
+
+1) Que es un API
+	Un conjunto de metodos, o procedimientos que tienen un input y un output
+
+2) Que es un API REST?
+	a) Es un api
+	b) Se accede a travers de HTTP los metodos son
+	
+	get + nombre
+	post + nombre
+	put + nombre
+	delete + nombre
+
+	Lo que dispara es un HTTP request, pasa por un http server 
+	apache, nginx, y este resuelve en HTTP Response + mensaje codificado en JSON
+
+cosas a tener en cuenta antes de ver las herramientas.
+
+En el response hay que tener en cuenta los codigos de error.
+
+304: No hubo modificaciones
+401: No tienes autorizacion
+404: Not Found
+405: Metodo no disponible
+415: No acepta el formato que pides
+500: Ocurrio un error en el servidor y la consulta no puede ser satisfecha
+
+Detalle pormenorizado.
+
+A traves de un api rest, puedo utilizar refertial transparency (Transparencia referencial)
+
+No se donde esta corriendo el servicio, igualmente puedo accederlo.
+
+Herramientas
+
+	curl
+	postman
